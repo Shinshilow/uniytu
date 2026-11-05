@@ -1,0 +1,2452 @@
+{
+  "source": "User-provided PDF: Майк Гейг, Разработка игр на Unity 2018 за 24 часа, Эксмо2020",
+  "target_unity": "2018.1.0f1",
+  "publisher_companion": "http://addons.eksmo.ru/it/Unity.zip",
+  "requirements_audited": 130,
+  "hours": [
+    {
+      "hour": 1,
+      "title": "Введение в Unity",
+      "printed_pages": [
+        25,
+        47
+      ],
+      "mapping_required": "Книга в этом часе не требует пользовательских текстур или UV; не добавлять их как вымышленное требование.",
+      "assets": [],
+      "practicums": [
+        {
+          "id": "H01-P01",
+          "pages": [
+            29,
+            30
+          ],
+          "title": "Создание первого проекта",
+          "requirements": [
+            "Проект Hour 1 TIY, режим 3D; без добавочных Asset Packages и Analytics.",
+            "Существующий проект можно открыть напрямую Unity File > Open Project; Hub не требуется."
+          ],
+          "scene_name": "Имя сцены на этом этапе не задаётся."
+        },
+        {
+          "id": "H01-E",
+          "pages": [
+            46,
+            47
+          ],
+          "title": "Итоговое упражнение",
+          "requirements": [
+            "Новая сцена, папка Assets/Scenes, сохранить сцену под описательным именем.",
+            "Добавить Cube; исследовать Transform/Inspector.",
+            "Освоить Hand, Flythrough и навигацию вокруг куба. Это действия пользователя в редакторе, их невозможно доказать наличием EXE."
+          ],
+          "objects": [
+            {
+              "name": "Cube",
+              "type": "Unity built-in Cube",
+              "transform": "Книга не фиксирует численные Position/Rotation/Scale."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        "Assets/Scenes содержит сохранённую открываемую сцену; Cube, Camera и свет доступны сразу в edit mode.",
+        "Нет compile errors; Play отображает куб, но наличие Play не заменяет редакторные шаги."
+      ],
+      "previous_scaffold_gaps": [
+        "Добавлены лишние общие runtime-скрипты всех часов и UI; нет подтверждения пользовательской практики.",
+        "Одноцветный куб сам по себе для упражнения 1 допустим: «нет текстуры» не является нарушением этого часа."
+      ]
+    },
+    {
+      "hour": 2,
+      "title": "Игровые объекты",
+      "printed_pages": [
+        48,
+        63
+      ],
+      "mapping_required": "Тема — Transform/иерархия; UV/карты материалов не заданы.",
+      "assets": [],
+      "practicums": [
+        {
+          "id": "H02-P01",
+          "pages": [
+            52,
+            53
+          ],
+          "title": "Создание игровых объектов",
+          "requirements": [
+            "Новая сцена; добавить Empty, Cube и Point Light.",
+            "Empty содержит только Transform. Cube содержит Transform, MeshFilter, MeshRenderer, BoxCollider. Point Light имеет Transform и Light.",
+            "Сохранить отдельный пример позволяет проверить компоненты, не смешивая с итоговой иерархией."
+          ]
+        },
+        {
+          "id": "H02-LAB",
+          "pages": [
+            54,
+            61
+          ],
+          "title": "Перемещение, вращение, масштаб, global/local, pivot/center",
+          "requirements": [
+            "Показать работу Move/Rotate/Scale, изменения через Transform.",
+            "Порядок операций имеет значение: локальные оси меняются после поворота.",
+            "Для связанных объектов родительские Transform влияют на ребёнка.",
+            "В числовом примере обсуждаются перенос (1,0,0) и поворот 90 градусов вокруг Z; это объяснение систем координат, а не отдельный фиксированный результат сцены."
+          ]
+        },
+        {
+          "id": "H02-E",
+          "pages": [
+            63,
+            63
+          ],
+          "title": "Родитель/ребёнок",
+          "requirements": [
+            "Cube world Position (0,2,-5).",
+            "Добавить Sphere, сделать ребёнком Cube, затем Sphere.localPosition=(0,1,0).",
+            "Проверить изменение положения, вращения и масштаба у обоих объектов; сохранить исходное упражнение."
+          ],
+          "objects": [
+            {
+              "name": "Cube",
+              "position": [
+                0,
+                2,
+                -5
+              ]
+            },
+            {
+              "name": "Sphere",
+              "parent": "Cube",
+              "localPosition": [
+                0,
+                1,
+                0
+              ],
+              "expectedWorldPosition_when_parent_unrotated_unitScale": [
+                0,
+                3,
+                -5
+              ]
+            }
+          ]
+        }
+      ],
+      "checks": [
+        "Cube и Sphere реально находятся в сохранённой сцене, а не создаются лишь после Play.",
+        "Sphere.parent == Cube; локальные координаты (0,1,0), мировые (0,3,-5) при исходных Transform.",
+        "Есть отдельная сцена практикума Empty/Cube/Point Light."
+      ],
+      "previous_scaffold_gaps": [
+        "В старом варианте создана только итоговая пара Cube/Sphere, отсутствует отдельный практикум компонентов и демонстрация local/global."
+      ]
+    },
+    {
+      "hour": 3,
+      "title": "Модели, материалы и текстуры",
+      "printed_pages": [
+        64,
+        79
+      ],
+      "mapping_required": "Обязательны настоящие файлы текстур, назначенные материалам; импорт нормалей, tiling Main Maps, корректные Standard shaders. Fig3.9 визуально прочитан из PDF p80.",
+      "assets": [
+        "Torus.fbx",
+        "Robot Kyle package/model and its original texture assets",
+        "Brick_Texture.png",
+        "Brick_Normal.png"
+      ],
+      "practicums": [
+        {
+          "id": "H03-P01",
+          "pages": [
+            67,
+            68
+          ],
+          "title": "Импорт Torus",
+          "requirements": [
+            "Assets/Models; импортировать оригинальный Torus.fbx из Час 3.",
+            "Перенести Torus на сцену.",
+            "На самом ModelImporter изменить Scale Factor с 1 на 100 и Apply. Это не transform.localScale=100."
+          ]
+        },
+        {
+          "id": "H03-P02",
+          "pages": [
+            68,
+            70
+          ],
+          "title": "Robot Kyle из Asset Store",
+          "requirements": [
+            "Отдельная новая сцена. Найти официальный Robot Kyle Unity Technologies.",
+            "Импортировать весь пакет; запасной вариант — пакет в сопроводительных файлах книги.",
+            "Перетащить модель из Assets/Robot Kyle/Model на сцену; при необходимости подобрать масштаб для обзора.",
+            "Импорт текстур/материалов модели должен сохранить ссылки и UV модели; не заменять робота капсулой."
+          ]
+        },
+        {
+          "id": "H03-P03",
+          "pages": [
+            75,
+            76
+          ],
+          "title": "Кирпичная стена",
+          "requirements": [
+            "Создать Assets/Textures и Assets/Materials.",
+            "Импортировать Brick_Texture.png.",
+            "Cube Position (0,1,-5), Scale (5,2,1).",
+            "Создать материал BrickWall, Shader Standard; Brick_Texture назначить Main Maps > Albedo.",
+            "Назначить BrickWall стене.",
+            "Main Maps > Tiling X=3, Y оставлен 1. Нельзя менять Secondary Maps вместо Main Maps."
+          ],
+          "objects": [
+            {
+              "name": "Cube",
+              "position": [
+                0,
+                1,
+                -5
+              ],
+              "scale": [
+                5,
+                2,
+                1
+              ],
+              "material": "BrickWall"
+            }
+          ],
+          "materials": [
+            {
+              "name": "BrickWall",
+              "shader": "Standard",
+              "albedo": "Brick_Texture.png",
+              "mainTextureScale": [
+                3,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "H03-E",
+          "pages": [
+            78,
+            79
+          ],
+          "title": "Четыре варианта кирпичных сфер",
+          "project_name": "Hour 3_Exercise",
+          "requirements": [
+            "Assets/Materials и Assets/Textures; оригинальные Brick_Texture.png и Brick_Normal.png.",
+            "Brick_Texture TextureImporter.anisoLevel=3.",
+            "Brick_Normal TextureImporter.textureType=NormalMap; Apply.",
+            "Directional Light Position(0,10,-10), Euler(30,-180,0).",
+            "Четыре Sphere, все Scale(2,2,2), позиции (1,2,-5),(-1,0,-5),(1,0,-5),(-1,2,-5).",
+            "Назначить по одному материалу каждой сфере. Порядок material↔sphere в тексте не зафиксирован.",
+            "Вопреки названиям материалов, все четыре используют Standard/Opaque, не Legacy shader."
+          ],
+          "objects": [
+            {
+              "name": "Sphere1",
+              "position": [
+                1,
+                2,
+                -5
+              ],
+              "scale": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "name": "Sphere2",
+              "position": [
+                -1,
+                0,
+                -5
+              ],
+              "scale": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "name": "Sphere3",
+              "position": [
+                1,
+                0,
+                -5
+              ],
+              "scale": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "name": "Sphere4",
+              "position": [
+                -1,
+                2,
+                -5
+              ],
+              "scale": [
+                2,
+                2,
+                2
+              ]
+            }
+          ],
+          "materials": [
+            {
+              "name": "DiffuseBrick",
+              "shader": "Standard",
+              "renderingMode": "Opaque",
+              "metallic": 0,
+              "smoothness": 0,
+              "albedo": "Brick_Texture.png",
+              "normal": null,
+              "mainTextureScale": [
+                3,
+                3
+              ],
+              "mainTextureOffset": [
+                0,
+                0
+              ]
+            },
+            {
+              "name": "SpecularBrick",
+              "shader": "Standard",
+              "renderingMode": "Opaque",
+              "metallic": 0,
+              "smoothness": 0.6,
+              "albedo": "Brick_Texture.png",
+              "normal": null,
+              "mainTextureScale": [
+                3,
+                3
+              ],
+              "mainTextureOffset": [
+                0,
+                0
+              ]
+            },
+            {
+              "name": "BumpedBrick",
+              "shader": "Standard",
+              "renderingMode": "Opaque",
+              "metallic": 0,
+              "smoothness": 0,
+              "albedo": "Brick_Texture.png",
+              "normal": "Brick_Normal.png",
+              "normalStrength": 1,
+              "mainTextureScale": [
+                3,
+                3
+              ],
+              "mainTextureOffset": [
+                0,
+                0
+              ]
+            },
+            {
+              "name": "BumpedSpecularBrick",
+              "shader": "Standard",
+              "renderingMode": "Opaque",
+              "metallic": 0,
+              "smoothness": 0.6,
+              "albedo": "Brick_Texture.png",
+              "normal": "Brick_Normal.png",
+              "normalStrength": 1,
+              "mainTextureScale": [
+                3,
+                3
+              ],
+              "mainTextureOffset": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "checks": [
+        "После закрытия и повторного открытия сцены материалы и текстуры сохранены как ассеты, Renderer.sharedMaterials ссылаются на них.",
+        "Для сферы есть ненулевая UV-развёртка (у built-in sphere она уже существует); albedo видно на всей сфере. Не требуется изобретать новую UV-развёртку.",
+        "В Inspector правильный tiling, _Metallic, _Glossiness и normal import; Bumped-материалы имеют _NORMALMAP keyword.",
+        "Сравнить блики и рельеф в одинаковом освещении с рис.3.9; выполнить Play без ошибок."
+      ],
+      "previous_scaffold_gaps": [
+        "Старый MaterialsDemo создавал процедурную кирпичную картинку и не импортировал реальный normal map.",
+        "Legacy Shaders/Diffuse, Specular, Bumped Diffuse, Bumped Specular не соответствуют рис.3.9; там Standard.",
+        "Старые tiling=(1,1), отсутствует обязательный (3,3); Wall, Torus и Robot Kyle отсутствуют."
+      ]
+    },
+    {
+      "hour": 4,
+      "title": "Ландшафт и элементы окружающей среды",
+      "printed_pages": [
+        80,
+        104
+      ],
+      "mapping_required": "TerrainData.splatPrototypes в Unity2018.1 с настоящими albedo/normal maps; spatial alpha/splat map, плавные переходы по рельефу; Terrain trees/detail layers, не нарисованные поверх примитивы.",
+      "assets": [
+        "terrain.raw",
+        "Standard Assets Environment/Terrain Assets",
+        "GrassHillAlbedo",
+        "GrassRockyAlbedo",
+        "CliffAlbedoSpecular (текст итогового упражнения сокращает до Cliff)",
+        "SandAlbedo",
+        "Conifer_Desktop",
+        "GrassFrond01AlbedoAlpha",
+        "Standard Assets Characters/FPSController"
+      ],
+      "practicums": [
+        {
+          "id": "H04-P01",
+          "pages": [
+            81,
+            84
+          ],
+          "title": "Terrain и импорт карты высот",
+          "requirements": [
+            "Новый Terrain; width/length 50. Импорт оригинального terrain.raw.",
+            "Рис.4.3 (визуально проверен): Depth Bit16, Width513, Height513, ByteOrder Mac, Flip Vertically выключен; TerrainSize X50 Y600 Z50 при импорте.",
+            "После импорта изменить максимальную высоту Terrain на60, конечный размер (50,60,50).",
+            "Декодировать RAW как big-endian 16-bit, а не Perlin Noise."
+          ]
+        },
+        {
+          "id": "H04-P02",
+          "pages": [
+            87,
+            88
+          ],
+          "title": "Ручной ландшафт",
+          "requirements": [
+            "Отдельный Terrain 50×50, максимальная высота60.",
+            "Paint Height: Height20, Flatten; затем создать рельеф, похожий на рис.4.7 инструментами Raise/Lower, Paint Height, Smooth Height.",
+            "Конкретный рельеф допускает вариации; исходная базовая высота20 должна быть осознанно задана."
+          ]
+        },
+        {
+          "id": "H04-P03",
+          "pages": [
+            88,
+            92
+          ],
+          "title": "Текстурирование",
+          "requirements": [
+            "Импортировать Environment/TerrainAssets (сопроводительный пакет, если встроенного нет).",
+            "Добавить GrassHillAlbedo как первый Terrain splat: покроет весь Terrain.",
+            "Добавить GrassRockyAlbedo и выбрать его; BrushSize30, Opacity20, TargetStrength0.6.",
+            "Нанести GrassRockyAlbedo на крутые склоны и трещины.",
+            "Дополнительные предложенные текстуры: CliffAlbedoSpecular на крутых частях, SandAlbedo для тропы.",
+            "Normal Map необязателен для первого слоя, но если добавляется, должен быть импортирован как NormalMap."
+          ]
+        },
+        {
+          "id": "H04-P04",
+          "pages": [
+            93,
+            95
+          ],
+          "title": "Terrain Trees",
+          "requirements": [
+            "Сцена с Terrain width/length100, уже сформированным и текстурированным.",
+            "Terrain Edit Trees > Add Tree, оригинальный Conifer_Desktop.",
+            "BrushSize2, Density10; Random Width/Height с уменьшенным средним размером.",
+            "Деревья наносятся Terrain TreeInstances; Draw в TerrainSettings включён.",
+            "Допускается свободное размещение и плотность после начальной практики."
+          ]
+        },
+        {
+          "id": "H04-P05",
+          "pages": [
+            95,
+            100
+          ],
+          "title": "Трава и настройки Terrain",
+          "requirements": [
+            "Terrain Edit Details > Add Grass Texture: GrassFrond01AlbedoAlpha.",
+            "Подобрать цвета травы к земле; использовать irregular brush.",
+            "Совет книги: Opacity0.01, TargetStrength0.0625 как начальные значения.",
+            "Сохранить DetailPrototype/DetailLayers, подходящие texture alpha и renderMode billboard, настройки ветра; реальное количество не фиксировано."
+          ]
+        },
+        {
+          "id": "H04-P06",
+          "pages": [
+            101,
+            102
+          ],
+          "title": "FPSController",
+          "requirements": [
+            "Импортировать Characters и поставить FPSController на Terrain чуть выше земли.",
+            "WASD, мышь для обзора, Space для прыжка.",
+            "Удалить Main Camera либо её AudioListener, т.к. FPSController содержит камеру/listener.",
+            "Проверить, что персонаж не застревает в Terrain и не проваливается."
+          ]
+        },
+        {
+          "id": "H04-E",
+          "pages": [
+            103,
+            104
+          ],
+          "title": "Пляж, горный хребет, равнина",
+          "requirements": [
+            "Ландшафт с пляжем, горным хребтом, плоской равниной; форма свободная.",
+            "Пляж SandAlbedo плавно переходит в GrassRockyAlbedo.",
+            "Плоские участки GrassHillAlbedo. По мере крутизны GrassHillAlbedo→GrassRockyAlbedo; наиболее высокие/скалистые участки→Cliff.",
+            "В тексте напечатано GlassRockyAlbedo; это опечатка относительно уже используемого GrassRockyAlbedo.",
+            "Завершить деревьями и травой, используя Terrain paint layers."
+          ]
+        }
+      ],
+      "checks": [
+        "TerrainCollider.data == Terrain.terrainData; heightmap фактически имеет рельеф.",
+        "Все splat textures назначены и asset-файлы существуют, alpha weights >=0 и сумма слоёв≈1.",
+        "Terrain treePrototypes/treeInstances и detailPrototypes/слои не пустые.",
+        "На пляже/равнине/склонах видны разные текстуры; ближний вид не выглядит одноцветной заливкой.",
+        "FPS может ходить по реальному рельефу, прыгать; ровно один AudioListener."
+      ],
+      "previous_scaffold_gaps": [
+        "Вместо terrain.raw использовалась процедурная формула.",
+        "Использовались маленькие одноцветные текстуры; трёх цветов недостаточно для всех требуемых слоёв.",
+        "Деревья были Cylinder/Sphere, Terrain tree/detail layers отсутствовали.",
+        "Нет травы, FPSController, связанных практикумов."
+      ]
+    },
+    {
+      "hour": 5,
+      "title": "Источники света и камеры",
+      "printed_pages": [
+        105,
+        127
+      ],
+      "mapping_required": "Особая текстура biohazard.png назначается Light.cookie с TextureImporter Cookie/Spotlight и alphaFromGrayscale, а не обычным albedo.",
+      "assets": [
+        "biohazard.png"
+      ],
+      "practicums": [
+        {
+          "id": "H05-P01",
+          "pages": [
+            108,
+            109
+          ],
+          "title": "Point Light",
+          "requirements": [
+            "Отключить default Directional Light.",
+            "Plane Position(0,0.5,0),Euler(270,0,0).",
+            "Cube1 Position(-1.5,1,-5); Cube2 Position(1.5,1,-5).",
+            "Point Light Position(0,1,-7), Shadows Hard; исследовать цвет/range/intensity."
+          ]
+        },
+        {
+          "id": "H05-P02",
+          "pages": [
+            110,
+            110
+          ],
+          "title": "Spotlight",
+          "scene_name": "Spotlight",
+          "requirements": [
+            "Дубликат Point Light сцены. Переименовать Point Light→Spotlight, Type=Spot, Position(0,1,-13).",
+            "Изучить distance/intensity/spot angle."
+          ]
+        },
+        {
+          "id": "H05-P03",
+          "pages": [
+            110,
+            111
+          ],
+          "title": "Directional Light",
+          "scene_name": "Directional Light",
+          "requirements": [
+            "Дубликат Spotlight сцены. Переименовать свет Directional Light, Type=Directional, Euler(75,0,0).",
+            "Затем Position(50,50,50): освещение от переноса не должно измениться.",
+            "Процедурное небо зависит от направления света."
+          ]
+        },
+        {
+          "id": "H05-P04",
+          "pages": [
+            112,
+            113
+          ],
+          "title": "Halo",
+          "requirements": [
+            "Объяснение/эксперимент DrawHalo для света. Книга здесь не фиксирует отдельную сцену или численные параметры."
+          ]
+        },
+        {
+          "id": "H05-P05",
+          "pages": [
+            114,
+            115
+          ],
+          "title": "Cookie",
+          "requirements": [
+            "Новая сцена, удалить Directional Light.",
+            "Plane Position(0,1,0),Euler(270,0,0).",
+            "На Main Camera добавить Light Spot, range18, spotAngle40, intensity3.",
+            "Импорт biohazard.png: TextureType Cookie, LightType Spotlight, AlphaSource FromGrayscale.",
+            "Light.cookie=biohazard; белые области пропускают свет, чёрные блокируют."
+          ]
+        },
+        {
+          "id": "H05-P06",
+          "pages": [
+            118,
+            118
+          ],
+          "title": "Две камеры и Depth",
+          "requirements": [
+            "Cube1 Position(-2,1,-5); Cube2 Position(2,1,-5).",
+            "Main Camera Position(-3,1,-8),Euler(0,45,0).",
+            "Camera2 Position(3,1,-8),Euler(0,315,0); AudioListener Camera2 выключен.",
+            "Показать, что верхняя по Depth камера перекрывает нижнюю; затем Main.depth=1."
+          ]
+        },
+        {
+          "id": "H05-P07",
+          "pages": [
+            119,
+            119
+          ],
+          "title": "Разделение экрана",
+          "requirements": [
+            "На базе двух камер. Main depth=-1, rect=(0,0,1,0.5).",
+            "Camera2 depth=-1, rect=(0,0.5,1,0.5).",
+            "Образы двух камер одновременно, горизонтальное разделение."
+          ]
+        },
+        {
+          "id": "H05-P08",
+          "pages": [
+            120,
+            120
+          ],
+          "title": "Картинка-в-картинке",
+          "requirements": [
+            "На базе двух камер. Main depth=-1, rect=(0,0,1,1).",
+            "Camera2 depth=0, rect=(0.75,0.75,0.2,0.2).",
+            "Маленькое изображение сверху справа; отдельная сохранённая сцена от split screen."
+          ]
+        },
+        {
+          "id": "H05-P09",
+          "pages": [
+            124,
+            125
+          ],
+          "title": "Слои Ignore Lights / Ignore Cameras",
+          "requirements": [
+            "Новая сцена с двумя кубами. Текст печатает обе позиции как(2,1,-5); это вероятная опечатка, для демонстрации следует разнести и отметить поправку, а не скрывать.",
+            "Создать пользовательские слои Ignore Lights и Ignore Cameras.",
+            "Первый куб на Ignore Lights, второй на Ignore Cameras.",
+            "DirectionalLight.cullingMask исключает Ignore Lights; MainCamera.cullingMask исключает Ignore Cameras.",
+            "В Game один неосвещённый куб, второй отсутствует."
+          ]
+        },
+        {
+          "id": "H05-E",
+          "pages": [
+            126,
+            127
+          ],
+          "title": "Четыре Point Light и четыре камеры",
+          "requirements": [
+            "Новая сцена, удалить DirectionalLight. Sphere Position(0,0,0).",
+            "Point Lights Position(-4,0,0),(4,0,0),(0,0,-4),(0,0,4); четыре разных цвета. Range/Intensity свободно подобрать.",
+            "Удалить default MainCamera. Camera positions(2,0,0),(-2,0,0),(0,0,2),(0,0,-2); каждая смотрит в центр сферы.",
+            "AudioListener включён ровно у одной камеры.",
+            "Каждая camera.rect занимает свою четверть (width0.5,height0.5); четыре разных угла."
+          ]
+        }
+      ],
+      "checks": [
+        "Сохранены отдельные Point/Spot/Directional/Cookie/TwoCameras/Split/PiP/Layers/Exercise сцены.",
+        "Cookie импортирован корректно, biohazard виден как проекция, а не просто файл в папке.",
+        "Камеры не перекрывают чужие viewport там, где это не цель практикума; AudioListener count=1.",
+        "Для четырёх Point Lights нужен достаточный QualitySettings.pixelLightCount, иначе часть цветного света может уходить в vertex lighting."
+      ],
+      "previous_scaffold_gaps": [
+        "Реализовано только итоговое четыре камеры; остальные восемь практикумов пропущены.",
+        "Нет biohazard cookie, слоёв CullingMask и сцены PiP."
+      ]
+    },
+    {
+      "hour": 6,
+      "title": "Игра первая: Великолепный гонщик",
+      "printed_pages": [
+        128,
+        145
+      ],
+      "mapping_required": "Настоящий Terrain с импортированной RAW-картой; terrain splat maps с Grass/Cliff/Mud; вода Water4Advanced, procedural skybox, fog. Плоская цветная арена не соответствует главе.",
+      "project_name": "Amazing Racer",
+      "scene_name": "Main",
+      "assets": [
+        "TerrainHeightmap.raw",
+        "Standard Assets Environment",
+        "GrassHillAlbedo",
+        "CliffAlbedoSpecular",
+        "GrassRockyAlbedo",
+        "MudRockyAlbedoSpecular",
+        "Water4Advanced.prefab",
+        "Standard Assets Characters/FirstPersonCharacter/Prefabs/FPSController.prefab",
+        "FinishZone.cs",
+        "GameManager.cs",
+        "PlayerRespawn.cs"
+      ],
+      "practicums": [
+        {
+          "id": "H06-WORLD",
+          "pages": [
+            131,
+            133
+          ],
+          "title": "Мир гонщика",
+          "requirements": [
+            "Amazing Racer; Terrain at(0,0,0). Оригинальный TerrainHeightmap.raw, big-endian Mac, default Depth/Width/Height.",
+            "TerrainSize width200,length100,maxHeight100. Сохранить Assets/Scenes/Main.unity.",
+            "Текстуры: GrassHillAlbedo для равнин; CliffAlbedoSpecular на крутых участках; GrassRockyAlbedo между ними; MudRockyAlbedoSpecular в ямах. Оттенки/размещение творческие.",
+            "Немного Terrain trees преимущественно на ровных участках.",
+            "Water4Advanced prefab Position(100,29,100),Scale(2,1,2)."
+          ]
+        },
+        {
+          "id": "H06-ENV",
+          "pages": [
+            133,
+            135
+          ],
+          "title": "Туман и небо",
+          "requirements": [
+            "Lighting Settings Fog включён, пример white,density0.005; в книге явно допускается изменить или удалить эти параметры.",
+            "Отдельный Material Shader Skybox/Procedural, назначить RenderSettings.skybox. Настроить sun/atmosphere/sky tint/exposure на вкус."
+          ]
+        },
+        {
+          "id": "H06-PLAYER",
+          "pages": [
+            135,
+            136
+          ],
+          "title": "Игрок",
+          "requirements": [
+            "Импортировать Characters, поставить настоящий FPSController prefab.",
+            "Переименовать в Player. Position(165,32,125),Euler(0,260,0).",
+            "Удалить Main Camera, т.к. Player имеет свою.",
+            "Проверить края карты: в исходной RAW специально оставлены выходы. Исправить Terrain/границы или SlopeLimit так, чтобы нельзя было выпасть."
+          ]
+        },
+        {
+          "id": "H06-OBJECTS",
+          "pages": [
+            137,
+            139
+          ],
+          "title": "Игровые зоны и менеджер",
+          "requirements": [
+            "Empty Spawn Point Position(165,32,125),Euler(0,260,0).",
+            "Plane Water Hazard Detector Position(100,27,100),Scale(20,1,20), MeshCollider.convex=true,isTrigger=true; MeshRenderer.enabled=false.",
+            "Empty Finish Zone Position(26,32,37), Point Light range35,intensity3; CapsuleCollider.isTrigger=true,radius9.",
+            "Empty Game Manager."
+          ],
+          "objects": [
+            {
+              "name": "Spawn Point",
+              "position": [
+                165,
+                32,
+                125
+              ],
+              "euler": [
+                0,
+                260,
+                0
+              ]
+            },
+            {
+              "name": "Water Hazard Detector",
+              "type": "Plane",
+              "position": [
+                100,
+                27,
+                100
+              ],
+              "scale": [
+                20,
+                1,
+                20
+              ],
+              "collider": "convex trigger MeshCollider",
+              "rendererEnabled": false
+            },
+            {
+              "name": "Finish Zone",
+              "position": [
+                26,
+                32,
+                37
+              ],
+              "components": {
+                "PointLight": {
+                  "range": 35,
+                  "intensity": 3
+                },
+                "CapsuleCollider": {
+                  "isTrigger": true,
+                  "radius": 9
+                }
+              }
+            },
+            {
+              "name": "Game Manager",
+              "type": "Empty"
+            }
+          ]
+        },
+        {
+          "id": "H06-SCRIPTS",
+          "pages": [
+            140,
+            142
+          ],
+          "title": "Импорт и связи",
+          "requirements": [
+            "Assets/Scripts с оригинальными FinishZone.cs, GameManager.cs, PlayerRespawn.cs.",
+            "FinishZone на Finish Zone; GameManager на Game Manager; PlayerRespawn на Water Hazard Detector.",
+            "PlayerRespawn.gameManager→Game Manager; FinishZone.gameManager→Game Manager.",
+            "GameManager.spawnPoint→Spawn Point; GameManager.player→Player.",
+            "GUI здесь именно предоставленный legacy OnGUI script; новая UI система изучается позже.",
+            "Условие конца — вход в Finish Zone; нет отдельного win/lose, цель — улучшать время. Водная опасность возвращает к спауну."
+          ]
+        },
+        {
+          "id": "H06-TEST",
+          "pages": [
+            142,
+            143
+          ],
+          "title": "Тестирование",
+          "requirements": [
+            "Проверить возможность завершить маршрут, возврат после воды, отсутствие выхода за границы.",
+            "Проверить взаимодействие SlopeLimit с холмами; подобрать скорость ходьбы/бега при необходимости.",
+            "Нельзя выдавать правки реального плейтеста за выполненные без запуска."
+          ]
+        },
+        {
+          "id": "H06-E",
+          "pages": [
+            145,
+            145
+          ],
+          "title": "Авторская модификация",
+          "requirements": [
+            "Это свободное улучшение базовой игры. Книга перечисляет предложения, а не требует реализовать все одновременно.",
+            "Варианты: альтернативные Finish Zones; новые опасности в рельефе; несколько spawn points, на которые отправляют разные опасности; другое небо/текстуры.",
+            "Сохранить базовый Main как контрольную сцену и отдельный Exercise с явно описанным выбранным изменением."
+          ]
+        }
+      ],
+      "checks": [
+        "Оригинальная RAW высотная карта применена, size/позиция Terrain соответствуют сцене.",
+        "Все Terrain splat textures, вода, FPS prefab ссылки сохранены.",
+        "Игрок видит сцену от первого лица, ходит, бежит, прыгает и не выходит из мира.",
+        "Water respawn сохраняет нужную позицию/ориентацию; Finish уведомляет GameManager; restart повторяет цикл.",
+        "Доступность маршрута и корректность размеров коллайдеров проверены в Play, не только синтаксисом."
+      ],
+      "previous_scaffold_gaps": [
+        "Старая Race была плоской ареной с видом сверху и капсулой, без TerrainHeightmap.raw, FPSController, воды Water4, текстур и legacy GUI.",
+        "Исходные GameManager/FinishZone/PlayerRespawn отсутствовали и заменены универсальным LessonActor.",
+        "Две finish зоны/checkpoint сами по себе допустимы как Exercise, но не заменяют базовую игру и предусмотренные связи."
+      ]
+    },
+    {
+      "hour": 7,
+      "title": "Скрипты, часть 1",
+      "printed_pages": [
+        146,
+        167
+      ],
+      "mapping_required": "This chapter does not require texture mapping or textured scenery; focus is C# and Console.",
+      "assets": [
+        "EqualityAndOperations.cs; ImportantFunctions.cs original examples"
+      ],
+      "practicums": [
+        {
+          "id": "07-P01",
+          "kind": "practicum",
+          "pages": [
+            149,
+            150
+          ],
+          "title": "Создание и назначение скрипта",
+          "requirements": [
+            "Assets/Scripts/HelloWorldScript.cs; class HelloWorldScript : MonoBehaviour.",
+            "Start prints exactly Hello World; attach component to Main Camera.",
+            "Before attaching script nothing runs; retain a short explanation or separate inactive example instead of fake output."
+          ],
+          "scene_name": "01_HelloWorld",
+          "checks": [
+            "Enter Play: exactly one Hello World per camera component; verify component exists in Inspector; stop and rerun."
+          ]
+        },
+        {
+          "id": "07-P02",
+          "kind": "practicum",
+          "pages": [
+            153,
+            154
+          ],
+          "title": "Использование встроенных методов",
+          "requirements": [
+            "ImportantFunctions.cs on Main Camera.",
+            "Start prints Start runs before an object Updates.",
+            "Update prints This is called once a frame. Must demonstrate frame callback; do not replace with unrelated GUI label."
+          ],
+          "scene_name": "02_ImportantFunctions",
+          "checks": [
+            "Run briefly: initial Start line before repeated Update lines; stop quickly to avoid excessive logs."
+          ]
+        },
+        {
+          "id": "07-A01",
+          "kind": "additional_practice",
+          "pages": [
+            160
+          ],
+          "title": "Операторы",
+          "requirements": [
+            "Book explicitly recommends EqualityAndOperations.cs from original Hour7 files; preserve original file and inspect examples.",
+            "Examples should cover arithmetic, assignment, comparison, logical conditions; explanatory examples are not separate required games."
+          ],
+          "scene_name": "03_EqualityAndOperations",
+          "checks": [
+            "Open script and identify operator cases; actual output must match cases if attached."
+          ]
+        },
+        {
+          "id": "07-E01",
+          "kind": "final_exercise",
+          "pages": [
+            167
+          ],
+          "title": "Три отдельные задачи",
+          "requirements": [
+            "Three separate scripts, all attached to Main Camera.",
+            "Task1 sums even integers 2 through499 inclusive and logs result62250.",
+            "Task2 visits all integers1..100; for multiples of3 OR5 prints Программирование — это прекрасно!, otherwise number.",
+            "Task3 prints first20 Fibonacci terms beginning0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181."
+          ],
+          "scene_name": "04_Exercise",
+          "checks": [
+            "Console shows sum62250 once; task2 emits100 entries including47 replacements and53 numeric entries; Fibonacci task emits20 terms with final4181."
+          ]
+        }
+      ],
+      "checks": [
+        "Enter Play: exactly one Hello World per camera component; verify component exists in Inspector; stop and rerun.",
+        "Run briefly: initial Start line before repeated Update lines; stop quickly to avoid excessive logs.",
+        "Open script and identify operator cases; actual output must match cases if attached.",
+        "Console shows sum62250 once; task2 emits100 entries including47 replacements and53 numeric entries; Fibonacci task emits20 terms with final4181."
+      ],
+      "previous_scaffold_gaps": [
+        "Only final exercise was provided previously; HelloWorldScript, ImportantFunctions and EqualityAndOperations examples were omitted."
+      ],
+      "notes": []
+    },
+    {
+      "hour": 8,
+      "title": "Скрипты, часть 2",
+      "printed_pages": [
+        168,
+        188
+      ],
+      "mapping_required": "No textured model is required in this chapter; appropriate input mappings are required.",
+      "assets": [],
+      "practicums": [
+        {
+          "id": "08-P01",
+          "kind": "written_practicum",
+          "pages": [
+            170,
+            171
+          ],
+          "title": "Идентификация частей метода",
+          "requirements": [
+            "Analyze int TakeDamage(int damageAmount) { int health=100; return health-damageAmount; }.",
+            "Answers: name TakeDamage, return int, one int parameter damageAmount, block declares health and returns subtraction."
+          ],
+          "scene_name": "01_Methods",
+          "checks": [
+            "Keep answers in a short document; no invented 3D requirement."
+          ]
+        },
+        {
+          "id": "08-P02",
+          "kind": "practicum",
+          "pages": [
+            173,
+            174
+          ],
+          "title": "Вызов перегруженных методов",
+          "requirements": [
+            "FireBallScript.cs attached to Main Camera.",
+            "Implement int TakeDamageFromFireball() returning100-5; overload(int damage) returning100-damage; overload(int damage,int playerHealth) returning playerHealth-damage.",
+            "Start calls all three with(),(25),(30,50), logs Player health:95,75,20 respectively."
+          ],
+          "scene_name": "01_Methods",
+          "checks": [
+            "Play emits health95,75,20 in order; all overloads present as class methods."
+          ]
+        },
+        {
+          "id": "08-P03",
+          "kind": "practicum",
+          "pages": [
+            177
+          ],
+          "title": "Считывание осей игрока",
+          "requirements": [
+            "PlayerInput.cs attached to Main Camera; read Input.GetAxis(\"Horizontal\") and(\"Vertical\") in Update.",
+            "Log Horizontal movement selected: hVal / Vertical movement selected: vVal only when nonzero.",
+            "Default mappings include arrows and WASD; retain InputManager axes so remapping remains possible."
+          ],
+          "scene_name": "02_PlayerInput",
+          "checks": [
+            "Arrows and WASD yield positive/negative values; releasing returns zero; inspect Edit Project Settings Input."
+          ]
+        },
+        {
+          "id": "08-P04",
+          "kind": "practicum",
+          "pages": [
+            178
+          ],
+          "title": "Считывание определённых клавиш",
+          "requirements": [
+            "PlayerInput variant on Main Camera: Input.GetKey(KeyCode.M) logs while held; Input.GetKeyDown(KeyCode.O) logs once per press."
+          ],
+          "scene_name": "03_KeyInput",
+          "checks": [
+            "Hold M several frames vs hold O; verify different Console counts."
+          ]
+        },
+        {
+          "id": "08-P05",
+          "kind": "practicum",
+          "pages": [
+            180
+          ],
+          "title": "Считывание движения мыши",
+          "requirements": [
+            "PlayerInput variant reads Mouse X and Mouse Y every Update; logs nonzero values for each axis."
+          ],
+          "scene_name": "04_MouseInput",
+          "checks": [
+            "Move mouse horizontally/vertically with Game focus; corresponding signed values appear."
+          ]
+        },
+        {
+          "id": "08-P06",
+          "kind": "practicum",
+          "pages": [
+            182
+          ],
+          "title": "Преобразование локального объекта",
+          "requirements": [
+            "Cube at(0,-1,0); CubeScript.cs attached to Cube.",
+            "Update: transform.Translate(.05f,0f,0f); transform.Rotate(0f,0f,1f); transform.localScale=new Vector3(1.5f,1.5f,1.5f).",
+            "This intentionally demonstrates cumulative per-frame local-space motion; retain book example separately from deltaTime-based controller."
+          ],
+          "scene_name": "05_LocalCube",
+          "checks": [
+            "Cube follows a broad circle due to rotating local axes; scale stays1.5 rather than accumulating."
+          ]
+        },
+        {
+          "id": "08-P07",
+          "kind": "practicum",
+          "pages": [
+            185,
+            186
+          ],
+          "title": "Преобразование целевого объекта",
+          "requirements": [
+            "Cube at(0,-1,0); TargetCubeScript.cs attached to Main Camera.",
+            "Start target=GameObject.Find(\"Cube\"); Update performs same Translate(.05,0,0),Rotate(0,0,1),localScale1.5 on target."
+          ],
+          "scene_name": "06_TargetCube",
+          "checks": [
+            "Only camera has controlling script; cube still follows circular path; verify target found and no null references."
+          ]
+        },
+        {
+          "id": "08-E01",
+          "kind": "final_exercise",
+          "pages": [
+            187,
+            188
+          ],
+          "title": "Управление кубом",
+          "requirements": [
+            "Cube at(0,0,-5); CubeControlScript.cs in Scripts attached to cube.",
+            "Left/right moves along worldX negative/positive; down/up moves along worldZ negative/positive.",
+            "MouseY rotates CAMERA aboutX; MouseX rotates CUBE aboutY.",
+            "M toggles cube between original scale and double original scale."
+          ],
+          "scene_name": "07_Exercise",
+          "checks": [
+            "Check all four arrows both before and after mouse rotation; motion must remain intended axes; two M presses restore original size; camera pitch and cube yaw change independently."
+          ]
+        }
+      ],
+      "checks": [
+        "Keep answers in a short document; no invented 3D requirement.",
+        "Play emits health95,75,20 in order; all overloads present as class methods.",
+        "Arrows and WASD yield positive/negative values; releasing returns zero; inspect Edit Project Settings Input.",
+        "Hold M several frames vs hold O; verify different Console counts.",
+        "Move mouse horizontally/vertically with Game focus; corresponding signed values appear.",
+        "Cube follows a broad circle due to rotating local axes; scale stays1.5 rather than accumulating.",
+        "Only camera has controlling script; cube still follows circular path; verify target found and no null references.",
+        "Check all four arrows both before and after mouse rotation; motion must remain intended axes; two M presses restore original size; camera pitch and cube yaw change independently."
+      ],
+      "previous_scaffold_gaps": [
+        "Prior project only implements final CubeControlScript; six runtime practica and written method analysis omitted."
+      ],
+      "notes": []
+    },
+    {
+      "hour": 9,
+      "title": "Столкновения",
+      "printed_pages": [
+        189,
+        202
+      ],
+      "mapping_required": "Physical materials mandatory for investigated examples; texture mapping not specifically required.",
+      "assets": [
+        "Standard Assets/PhysicsMaterials: Bouncy,Ice,Metal,Rubber,Tree"
+      ],
+      "practicums": [
+        {
+          "id": "09-P01",
+          "kind": "practicum",
+          "pages": [
+            191
+          ],
+          "title": "Использование твёрдых тел",
+          "requirements": [
+            "Cube at(0,1,-5); first observe without Rigidbody, then add Rigidbody and observe gravity.",
+            "Explore Drag and Constraints; preserve baseline and gravity variant or explain change in scene notes."
+          ],
+          "scene_name": "01_Rigidbody",
+          "checks": [
+            "Without Rigidbody stays in place; with gravity falls; Inspector contains correct3D Rigidbody."
+          ]
+        },
+        {
+          "id": "09-P02",
+          "kind": "practicum",
+          "pages": [
+            193,
+            194
+          ],
+          "title": "Эксперименты с коллайдерами",
+          "requirements": [
+            "UpperCube at(0,1,-5) with Rigidbody.",
+            "LowerCube at(0,-1,-5),scale(4,.1,4),rot(0,0,15),Rigidbody useGravityfalse.",
+            "Observe two unrestrained bodies; then freeze ALL lowerCube position/rotation axes.",
+            "Final demonstrated variant removes upper BoxCollider, adds SphereCollider; lower rotation changed to(0,0,350).",
+            "Optional variant freeze only lower positionY and leave rest free."
+          ],
+          "scene_name": "02_Colliders",
+          "checks": [
+            "Before constraints both move; after FreezeAll lower fixed; upper cube with SphereCollider rolls like sphere."
+          ]
+        },
+        {
+          "id": "09-A01",
+          "kind": "chapter_activity",
+          "pages": [
+            194,
+            195,
+            196
+          ],
+          "title": "Физические материалы",
+          "requirements": [
+            "Import Characters/PhysicsMaterials original assets: Bouncy,Ice,Metal,Rubber,Tree, or create PhysicsMaterial assets matching investigated behavior.",
+            "Demonstrate Dynamic/StaticFriction,Bounciness,FrictionCombine,BounceCombine on Collider materials; do not confuse renderer Material with PhysicMaterial."
+          ],
+          "scene_name": "03_PhysicMaterials",
+          "checks": [
+            "Collider.sharedMaterial assigned; behavior differs under friction and bounce settings."
+          ]
+        },
+        {
+          "id": "09-P03",
+          "kind": "practicum",
+          "pages": [
+            197
+          ],
+          "title": "Работа с триггером",
+          "requirements": [
+            "Cube(-1,1,-5),Sphere(1,1,-5).",
+            "Cube BoxCollider.isTrigger=true with TriggerScript; sphere Rigidbody gravityfalse with MovementScript.",
+            "MovementScript.Update translates MouseX/10,MouseY/10,0.",
+            "TriggerScript logs enter,stay,exit with other.gameObject.name; callbacks declared at class level."
+          ],
+          "scene_name": "04_MouseTrigger",
+          "checks": [
+            "Sphere responds to mouse; passes through cube without physical collision; logs all3 callback types."
+          ]
+        },
+        {
+          "id": "09-P04",
+          "kind": "practicum",
+          "pages": [
+            199,
+            200
+          ],
+          "title": "Рейкастинг",
+          "requirements": [
+            "Four spheres at(-1,1,-5),(1,1.5,-5),(-1,-2,5),(1.5,0,0).",
+            "RaycastScript.cs on Main Camera; Update reads MouseX,MouseY,rotates camera and calls CheckForRaycastHit().",
+            "Method uses Physics.Raycast(transform.position,transform.forward,out hit); logs hit object name, destroys hit.gameObject.",
+            "No shooting mouse-click requirement in printed practicum; hit is checked every frame."
+          ],
+          "scene_name": "05_Raycast",
+          "checks": [
+            "Aim camera centre at sphere: matching sphere destroyed and logged; RaycastHit type is correct."
+          ]
+        },
+        {
+          "id": "09-E01",
+          "kind": "final_exercise",
+          "pages": [
+            201,
+            202
+          ],
+          "title": "Два триггера и управляемая сфера",
+          "requirements": [
+            "LTrigger cube(-1.5,0,-5),scale(.1,2,2); RTrigger duplicate at(1.5,0,-5).",
+            "Sphere(0,0,-5),Rigidbody useGravityfalse; MotionScript on sphere.",
+            "TriggerScript on both cubes, BoxCollider.isTrigger=true (the omitted step is the exercise trick).",
+            "Arrow movement; log TRIGGER name plus entry/stay/exit type."
+          ],
+          "scene_name": "06_Exercise",
+          "checks": [
+            "Pass through both trigger planes using arrows; Console identifies LTrigger vs RTrigger and all events; no physical blocking."
+          ]
+        }
+      ],
+      "checks": [
+        "Without Rigidbody stays in place; with gravity falls; Inspector contains correct3D Rigidbody.",
+        "Before constraints both move; after FreezeAll lower fixed; upper cube with SphereCollider rolls like sphere.",
+        "Collider.sharedMaterial assigned; behavior differs under friction and bounce settings.",
+        "Sphere responds to mouse; passes through cube without physical collision; logs all3 callback types.",
+        "Aim camera centre at sphere: matching sphere destroyed and logged; RaycastHit type is correct.",
+        "Pass through both trigger planes using arrows; Console identifies LTrigger vs RTrigger and all events; no physical blocking."
+      ],
+      "previous_scaffold_gaps": [
+        "Prior scaffold final trigger scene approximately matches end exercise, but omits gravity/collider/physical-material/mouse-trigger/raycast practica."
+      ],
+      "notes": []
+    },
+    {
+      "hour": 10,
+      "title": "Игра вторая: Шар хаоса",
+      "printed_pages": [
+        203,
+        218
+      ],
+      "mapping_required": "Wall material Albedo Sand Albedo; Smoothness0; texture scaleX10. Water4Advanced floor at y.5. BumperColor,ChaosBall,BlueBall,Redball,GreenBall,OrangeBall are colored renderer materials; color matching is part of gameplay.",
+      "assets": [
+        "Standard Assets Environment (SandAlbedo texture,Water4Advanced prefab)",
+        "Standard Assets Characters (FPSController)"
+      ],
+      "practicums": [
+        {
+          "id": "10-G01",
+          "kind": "game_world",
+          "pages": [
+            205,
+            206,
+            207,
+            208
+          ],
+          "title": "Замкнутая арена",
+          "requirements": [
+            "New project Шар хаоса; import Environment and Characters; save Scenes/Main.unity.",
+            "Plane origin scale(5,1,5) =>50×50 floor. Delete default Main Camera.",
+            "Wall1 Cube(-25,1.5,0),scale(1.5,3,51); Wall2(25,1.5,0); Wall3(0,1.5,25),rot(0,90,0); Wall4(0,1.5,-25),rot(0,90,0); group Walls origin.",
+            "Material Wall Standard with Sand Albedo on Albedo; Smoothness0; TilingX10; assign to all four walls.",
+            "Water4Advanced from Standard Assets/Environment/Water/Water4/Prefabs at(0,.5,0).",
+            "SuperBouncy PhysicMaterial from fig10.3; assign PhysicsManager Default Material or explicitly to every colliding surface/body to preserve effect.",
+            "Fig10.3 visually confirmed: SuperBouncy dynamicFriction0,staticFriction0,bounciness1,frictionCombine Average,bounceCombine Maximum."
+          ],
+          "scene_name": "Main",
+          "checks": [
+            "Arena closed: balls cannot leave; wall texture visibly repeats10 times; floor water reflects as asset permits; spheres keep moving after bounces."
+          ]
+        },
+        {
+          "id": "10-G02",
+          "kind": "game_player",
+          "pages": [
+            209,
+            210
+          ],
+          "title": "Контроллер и бампер",
+          "requirements": [
+            "FPSController prefab at(0,1,0); FirstPersonCharacter camera child localPosition(0,5,-3.5),rotation(43,0,0).",
+            "Cube named Bumber (book typo),scale(3.5,3,1),parent FPSController; localPosition(0,0,1),localRotation0.",
+            "Material BumperColor with chosen Albedo color; FPSController movement configuration from fig10.5.",
+            "Fig10.5 visually confirmed: IsWalkingfalse,WalkSpeed5,RunSpeed20,RunstepLengthen.7,JumpSpeed0,StickToGroundForce10,GravityMultiplier2; MouseLook Xsensitivity3,Ysensitivity2,ClampVerticalRotationtrue,MinimumX0,MaximumX60,Smoothfalse,SmoothTime5,LockCursortrue; UseFovKicktrue,UseHeadBobfalse,StepInterval5,FootstepSounds Size0."
+          ],
+          "scene_name": "Main",
+          "checks": [
+            "Move and steer controller; camera remains above/behind; physical bumper pushes colored balls."
+          ]
+        },
+        {
+          "id": "10-G03",
+          "kind": "game_entities",
+          "pages": [
+            210,
+            211,
+            212,
+            213
+          ],
+          "title": "Шары хаоса и цветные шары",
+          "requirements": [
+            "First Chaos sphere(12,2,12),scale(.5,.5,.5),yellow ChaosBall material,tag Chaos.",
+            "Rigidbody gravityfalse,CollisionDetection ContinuousDynamic,FreezePositionY.",
+            "VelocityScript startSpeed50; Start rigidbody.velocity=new Vector3(startSpeed,0,startSpeed).",
+            "Five Chaos spheres total (original plus4 duplicates),all y2; group Chaos Balls at origin.",
+            "Blue Ball,Red Ball,Orange Ball,Green Ball: each y2,default sphere scale1,matching colored materials BlueBall/Redball/GreenBall/OrangeBall and tags Blue/Red/Green/Orange.",
+            "Colored ball Rigidbody same gravity/collision/Y constraints; VelocityScript startSpeed25."
+          ],
+          "scene_name": "Main",
+          "checks": [
+            "Five fast yellow plus four slower colored balls move within arena; color/name/tag correctly match; no ball changesY."
+          ]
+        },
+        {
+          "id": "10-G04",
+          "kind": "game_logic",
+          "pages": [
+            213,
+            214,
+            215,
+            216
+          ],
+          "title": "Четыре угловые цели",
+          "requirements": [
+            "Blue Goal empty(-22,2,-22),tagBlue; BoxCollider size(3,2,3),isTriggertrue; PointLight Blue intensity3 indirectMultiplier0.",
+            "Other goals tags/colors Red,Green,Orange at other corners(22,2,-22),(22,2,22),(-22,2,22); group Goals.",
+            "GoalScript has bool isSolved; OnTriggerEnter compares collided tag to own, marks solved,disables Light,destroys correct colored ball.",
+            "Game Manager with GameManager refs blue/green/red/orange GoalScript; gameover only when all4 isSolved; display Game Over.",
+            "Base book rules: player cannot lose. Do not add defeat by falling as substitute for objective."
+          ],
+          "scene_name": "Main",
+          "checks": [
+            "Wrong-colored sphere does not solve goal; matching ball solves exactly corresponding goal/light; victory only after all4 solved."
+          ]
+        },
+        {
+          "id": "10-E01",
+          "kind": "final_exercise",
+          "pages": [
+            218
+          ],
+          "title": "Модификация игры",
+          "requirements": [
+            "Choose and document an improvement; printed suggestions: restart button,timer,varied Chaos balls,additional Chaos goal,modified bumper shape,hide water beyond arena.",
+            "Keep Main faithful to base chapter; separate Exercise scene may add restart/timer without replacing objective."
+          ],
+          "scene_name": "Exercise",
+          "checks": [
+            "At least one documented improvement runs; base matching-goal game remains intact."
+          ]
+        }
+      ],
+      "checks": [
+        "Arena closed: balls cannot leave; wall texture visibly repeats10 times; floor water reflects as asset permits; spheres keep moving after bounces.",
+        "Move and steer controller; camera remains above/behind; physical bumper pushes colored balls.",
+        "Five fast yellow plus four slower colored balls move within arena; color/name/tag correctly match; no ball changesY.",
+        "Wrong-colored sphere does not solve goal; matching ball solves exactly corresponding goal/light; victory only after all4 solved.",
+        "At least one documented improvement runs; base matching-goal game remains intact."
+      ],
+      "previous_scaffold_gaps": [
+        "Previous Chaos() is a different game:20×20 unbounded platform,5 balls to knock off,top-down cylinder player.",
+        "Missing all four matching colored balls/goals,tags,SuperBouncy,water shader,wall textures,and FPS bumper."
+      ],
+      "notes": [
+        "Fig10.3 and10.5 visually inspected from rendered PDF pages208 and211; exact numeric configuration above."
+      ]
+    },
+    {
+      "hour": 11,
+      "title": "Префабы",
+      "printed_pages": [
+        220,
+        231
+      ],
+      "mapping_required": "Grey Floor material is optional; no textured Lamp requirement.",
+      "assets": [
+        "Lamp.prefab created in chapter"
+      ],
+      "practicums": [
+        {
+          "id": "11-P01",
+          "kind": "practicum",
+          "pages": [
+            224,
+            225
+          ],
+          "title": "Создание префаба Lamp",
+          "requirements": [
+            "Cube named Lamp worldPosition(0,1,0),scale(.5,2,.5),Rigidbody.",
+            "Sphere worldPosition(0,2.2,0),Light on Sphere; parent sphere under Lamp preserving world pose.",
+            "Save real Assets/Prefabs/Lamp.prefab; cube+sphere must remain linked prefab assets,not mere generated GameObjects."
+          ],
+          "scene_name": "01_CreateLamp",
+          "checks": [
+            "Prefab asset exists; cube Rigidbody present; child world pose maintained despite parent scaling."
+          ]
+        },
+        {
+          "id": "11-P02",
+          "kind": "practicum",
+          "pages": [
+            226
+          ],
+          "title": "Несколько экземпляров",
+          "requirements": [
+            "Scene Lamps in same project; Plane named Floor at origin; optional grey material to reveal shadows.",
+            "Four linked instances of Lamp across floor corners (book text says place one then three more); positions not numerically specified."
+          ],
+          "scene_name": "Lamps",
+          "checks": [
+            "Hierarchy instances linked to Lamp asset; play physics reacts to Floor collider."
+          ]
+        },
+        {
+          "id": "11-P03",
+          "kind": "practicum",
+          "pages": [
+            227,
+            228
+          ],
+          "title": "Обновление префаба",
+          "requirements": [
+            "On Lamp asset change Sphere Light red; every instance inherits.",
+            "Override one instance Sphere Light back towhite; others remainred.",
+            "Apply that override to prefab; all inherited instances become white.",
+            "Can preserve three demonstration snapshots/scenes or a small editor guide because sequential edit operations cannot all be one final scene.",
+            "Related chapter step: demonstrate Break Prefab Instance then Revert link in2018.1 workflow."
+          ],
+          "scene_name": "02_PrefabUpdates",
+          "checks": [
+            "Changing asset updates linked instances; local override isolated until Apply; no fake disconnected duplicates."
+          ]
+        },
+        {
+          "id": "11-E01",
+          "kind": "final_exercise",
+          "pages": [
+            230,
+            231
+          ],
+          "title": "Instantiate в двух позициях",
+          "requirements": [
+            "Same Lamp prefab; saved root position(-1,0,-5). Delete Directional Light.",
+            "Empty Spawn Point position(1,1,-5); Plane position(0,0,-4),rotation(270,0,0).",
+            "PrefabGenerator.cs on Spawn Point,public GameObject prefab reference Lamp.",
+            "B:Instantiate(prefab); Space:Instantiate(prefab,transform.position,transform.rotation)."
+          ],
+          "scene_name": "03_Exercise",
+          "checks": [
+            "B spawns root at prefab position(-1,0,-5); Space at(1,1,-5); both are full Lamp with Rigidbody/light."
+          ]
+        }
+      ],
+      "checks": [
+        "Prefab asset exists; cube Rigidbody present; child world pose maintained despite parent scaling.",
+        "Hierarchy instances linked to Lamp asset; play physics reacts to Floor collider.",
+        "Changing asset updates linked instances; local override isolated until Apply; no fake disconnected duplicates.",
+        "B spawns root at prefab position(-1,0,-5); Space at(1,1,-5); both are full Lamp with Rigidbody/light."
+      ],
+      "previous_scaffold_gaps": [
+        "Prior Lamp root empty,cylinder stem,missing Rigidbody,incorrect transforms.",
+        "Prior backdrop is Cube instead of specified Plane rotation270.",
+        "Multiple linked instances,updates/override/Apply practice absent."
+      ],
+      "notes": []
+    },
+    {
+      "hour": 12,
+      "title": "Инструменты создания 2D-игр",
+      "printed_pages": [
+        232,
+        247
+      ],
+      "mapping_required": "Sprite art must be imported as Sprite (2D and UI); slicing and source alpha are material to the exercises. SpriteRenderer sorting layers/order required; do not replace sprites with primitive colored squares and claim fidelity.",
+      "assets": [
+        "ranger.png",
+        "rangerTalking.png",
+        "Standard Assets/2D/Prefabs/CharacterRobotBoy.prefab",
+        "Standard Assets/2D/Sprites/PlatformWhiteSprite",
+        "BackgroundGreyGridSprite",
+        "RobotBoyCrouch00"
+      ],
+      "practicums": [
+        {
+          "id": "12-P01",
+          "kind": "practicum",
+          "pages": [
+            234
+          ],
+          "title": "Создание и размещение спрайта",
+          "requirements": [
+            "2D project (orthographic camera,no Directional Light). Assets/Sprites/Hexagon via Create Sprites Hexagon.",
+            "Place Hexagon in scene and change SpriteRenderer.color; preserve source sprite asset."
+          ],
+          "scene_name": "01_SimpleSprite",
+          "checks": [
+            "Sprite visible and tinted; Camera projection Orthographic;2D editor mode."
+          ]
+        },
+        {
+          "id": "12-A01",
+          "kind": "chapter_activity",
+          "pages": [
+            237,
+            238
+          ],
+          "title": "Импорт одиночного спрайта",
+          "requirements": [
+            "Import ranger.png from book examples or own image explicitly permitted by book; TextureImporter textureTypeSprite.",
+            "Place sprite on scene at z in front of camera; nonzeroZ from3D scene view can hide sprites."
+          ],
+          "scene_name": "02_Ranger",
+          "checks": [
+            "Imported sprite type correct; visible inGame; image aspect and alpha preserved."
+          ]
+        },
+        {
+          "id": "12-P02",
+          "kind": "practicum",
+          "pages": [
+            238,
+            239
+          ],
+          "title": "Режимы Single и Multiple",
+          "requirements": [
+            "Import rangerTalking.png (own sheet permitted); show Single baseline and Multiple sliced variant via Sprite Editor.",
+            "Save actual Sprite subassets and importer spritesheet rectangles; naming/slices need source/image examination.",
+            "Do not replace sprite sheet with one flat color rectangle; the exercise is importer/slicing practice."
+          ],
+          "scene_name": "03_SpriteSheet",
+          "checks": [
+            "Project expansion shows one sprite inSingle and multiple subSprites inMultiple; slice frames cover intended cells."
+          ]
+        },
+        {
+          "id": "12-P03",
+          "kind": "practicum",
+          "pages": [
+            241,
+            242
+          ],
+          "title": "Слои сортировки",
+          "requirements": [
+            "Import2D Standard Assets. BackgroundGreyGridSprite pos(-2.5,-2.5,0),scale(2,2,1).",
+            "Sorting layers Background and Player; BackgroundGreyGridSprite onBackground; RobotBoyCrouch00 atorigin onPlayer.",
+            "Default moved to render last if preserving book recommendation; demonstrate reordering makes background cover robot."
+          ],
+          "scene_name": "04_SortingLayers",
+          "checks": [
+            "Renderer.sortingLayerName correct and layers stored in TagManager; robot appears over grid whenPlayer renders later."
+          ]
+        },
+        {
+          "id": "12-P04",
+          "kind": "practicum",
+          "pages": [
+            244,
+            245
+          ],
+          "title": "Столкновение двух спрайтов",
+          "requirements": [
+            "RobotBoyCrouch00 at(0,0,0),PolygonCollider2D.",
+            "Duplicate at(.3,-1,0),PolygonCollider2D; top Rigidbody2D dynamic,gravity as in figure12.12.",
+            "Upper falls onto lower;3D BoxCollider/Rigidbody must not substitute."
+          ],
+          "scene_name": "05_2DPhysics",
+          "checks": [
+            "Upper robot falls and collides; polygon matches alpha silhouette; both render in front of camera."
+          ]
+        },
+        {
+          "id": "12-E01",
+          "kind": "final_exercise",
+          "pages": [
+            246,
+            247
+          ],
+          "title": "Платформы и RobotBoy",
+          "requirements": [
+            "CharacterRobotBoy prefab original at(3,1.8,0); keep animator/controller and actual robot artwork.",
+            "PlatformWhiteSprite at(0,0,0),scale(3,1,1),BoxCollider2D.",
+            "Duplicate at(7.5,0,0),rotation(0,0,30),same scale(3,1,1).",
+            "MainCamera position(11,4,-10),orthographicSize7,rotationdefault; arrows movement andSpace jumping."
+          ],
+          "scene_name": "06_Exercise",
+          "checks": [
+            "Actual animated RobotBoy moves/jumps; lands on both level and angled platforms; no3D physics mismatch."
+          ]
+        }
+      ],
+      "checks": [
+        "Sprite visible and tinted; Camera projection Orthographic;2D editor mode.",
+        "Imported sprite type correct; visible inGame; image aspect and alpha preserved.",
+        "Project expansion shows one sprite inSingle and multiple subSprites inMultiple; slice frames cover intended cells.",
+        "Renderer.sortingLayerName correct and layers stored in TagManager; robot appears over grid whenPlayer renders later.",
+        "Upper robot falls and collides; polygon matches alpha silhouette; both render in front of camera.",
+        "Actual animated RobotBoy moves/jumps; lands on both level and angled platforms; no3D physics mismatch."
+      ],
+      "previous_scaffold_gaps": [
+        "Prior green rectangle player is not CharacterRobotBoy and has no original animation.",
+        "Sprite generation/import,sprite sheet slicing,sorting layers,polygon collider examples omitted.",
+        "Platform width hardcoded6 may happen to resemble graphic but must preserve actual sprite plus transform scale3."
+      ],
+      "notes": []
+    },
+    {
+      "hour": 13,
+      "title": "Тайлмапы в 2D-играх",
+      "printed_pages": "248–264",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "GrassPlatform_TileSet / GrassPlatform_Tileset",
+        "Jungle_Tileset",
+        "Standard Assets/2D/Prefabs/CharacterRobotBoy.prefab",
+        "CameraFollow.cs"
+      ],
+      "units": [
+        {
+          "id": "13.1",
+          "title": "Добавление тайлмапа",
+          "printed_pages": "249–250",
+          "requirements": [
+            "2D-project, Scenes folder and saved scene. One Grid with Background and Platforms child Tilemaps; do not create a second Grid. Grid default Cell Size=(1,1,0), Tilemap+TilemapRenderer on each."
+          ]
+        },
+        {
+          "id": "13.2",
+          "title": "Создание палитры",
+          "printed_pages": "252–253",
+          "requirements": [
+            "Persist real palette assets Jungle Tiles and Grass Tiles in Palettes, both accessible in Tile Palette window."
+          ]
+        },
+        {
+          "id": "13.3",
+          "title": "Настройка спрайтов и создание тайлов",
+          "printed_pages": "254–256",
+          "requirements": [
+            "Sprites folder. GrassPlatform_Tileset SpriteMode=Multiple, PPU=64, Slice GridByCellSize64x64. Jungle_Tileset sliced128x128; corresponding PPU must match tile size per CellSize1 (text says repeat settings; inspect original importer/meta before overwriting). Preserve every source sprite and create real Tile assets in Tiles; put correct tiles into respective Grass Tiles/Jungle Tiles palettes."
+          ]
+        },
+        {
+          "id": "13.4",
+          "title": "Рисуем тайлами",
+          "printed_pages": "258–259",
+          "requirements": [
+            "Paint Jungle background and Grass platforms into their own maps. Scene must contain recognizable textured terrain rather than solid square substitutes. Arrange tiles inside palettes for practical editing."
+          ]
+        },
+        {
+          "id": "13.5",
+          "title": "Тайлмапы и физика",
+          "printed_pages": "260–263",
+          "requirements": [
+            "Import real CharacterRobotBoy above platform, scale=(1,1,1) if needed. TilemapCollider2D on Platforms, offset.y=-0.1. Add CompositeCollider2D with Rigidbody2D BodyType=Static, enable UsedByComposite on TilemapCollider2D. Consider Continuous collision for fast actor."
+          ]
+        },
+        {
+          "id": "13.E",
+          "title": "Итоговое упражнение",
+          "printed_pages": "264",
+          "requirements": [
+            "Finish both painted maps; optional Foreground plants/rocks; follow camera via CameraFollow.cs; move Background farther on z and use perspective camera to show real parallax; tint Background paler."
+          ]
+        }
+      ],
+      "required_checks": [
+        "After save/reopen all sprite, Tile, palette references survive.",
+        "Robot lands on grass and can jump between platforms; collision offset correct; composite map static.",
+        "Follow camera and actual parallax under motion, layer sorting correct."
+      ],
+      "old_scaffold_defects": [
+        "Prior scene used single-color generated square sprites; no imported tile sheets, no real palettes.",
+        "Called maps Ground/Decoration instead of Platforms/Foreground; omitted original RobotBoy, composite collider and offset."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 14,
+      "title": "Пользовательские интерфейсы",
+      "printed_pages": "265–286",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "BackgroundSpace.png",
+        "Hour14Package.unitypackage",
+        "clouds.jpg",
+        "LevelManager prefab including original dependencies"
+      ],
+      "units": [
+        {
+          "id": "14.1",
+          "title": "Добавление холста",
+          "printed_pages": "267",
+          "requirements": [
+            "Canvas plus EventSystem; preserve proper RectTransform/CanvasScaler/GraphicRaycaster."
+          ]
+        },
+        {
+          "id": "14.2",
+          "title": "Использование Rect Transform",
+          "printed_pages": "269–270",
+          "requirements": [
+            "Image on Canvas; demonstrate unified anchor vs split/stretch anchors; different Game aspect/resolution affects layout correctly. Separate demonstration scenes or clearly named examples preserve both states."
+          ]
+        },
+        {
+          "id": "14.3",
+          "title": "Использование изображений",
+          "printed_pages": "273–274",
+          "requirements": [
+            "Import BackgroundSpace.png as Sprite2D/UI and use as actual UI background SourceImage, properly anchored/stretched."
+          ]
+        },
+        {
+          "id": "14.4",
+          "title": "Использование кнопок",
+          "printed_pages": "277–279",
+          "requirements": [
+            "UI Button ColorTransition, HighlightedColor=red, PressedColor=green. Serialized/persistent OnClick modifies its child Text.text to Released. Verify it remains wired after scene reopen."
+          ]
+        },
+        {
+          "id": "14.5",
+          "title": "Изучение режимов рендеринга",
+          "printed_pages": "283",
+          "requirements": [
+            "3D demonstration Canvas modes ScreenSpaceOverlay, ScreenSpaceCamera with MainCamera assigned, and WorldSpace. Make the modes inspectable; moving camera and toggling Perspective/Orthographic demonstrates differences."
+          ]
+        },
+        {
+          "id": "14.E",
+          "title": "Система меню",
+          "printed_pages": "284–286",
+          "requirements": [
+            "2D scene UI Panel; import Hour14Package.unitypackage. clouds.jpg must be Sprite and assigned to Panel Source Image. Title/subtitle; button object name Start, child label Start Game. Save Menu plus separate empty placeholder game scene; ScenesInBuild has Menu first. Original LevelManager prefab in scene; Start persistent OnClick calls LoadGame(). Original splash/fade/background music assets and behaviour from package should be kept, not replaced with a flat blue panel."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Button hover/pressed colors and Released label actually work.",
+        "Inspect anchor behavior across two aspect ratios.",
+        "Start Game transitions from textured Menu to empty placeholder scene; no missing event target after reopen.",
+        "Original LevelManager fades/music work and survive scene load as authored."
+      ],
+      "old_scaffold_defects": [
+        "Old project only synthesized menu, blue rectangle, generated tone and race as Game; missing other practicum scenes and source assets.",
+        "Assigning runtime callbacks is not equivalent to saved inspector OnClick task."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 15,
+      "title": "Игра третья: Капитан Бластер",
+      "printed_pages": "287–307",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Star_Sky.png",
+        "spaceship.png",
+        "meteor.png (19 frames)",
+        "bullet.png",
+        "Original completed project/assets in hour15 examples"
+      ],
+      "units": [
+        {
+          "id": "15.1",
+          "title": "Подготовка мира и фона",
+          "printed_pages": "288–291",
+          "requirements": [
+            "2D project Captain Blaster, Scenes/Main.unity, Game aspect5:4, orthographic camera Size6. Background folder; Star_Sky Sprite PPU50, two instances positions(0,0,0),(0,20,0). ScrollBackground speed=-2, lowerYValue=-20, upperYValue=40; translate downward and wrap."
+          ]
+        },
+        {
+          "id": "15.2",
+          "title": "Корабль",
+          "printed_pages": "291–293",
+          "requirements": [
+            "Spaceship folder, spaceship.png SpriteModeMultiple; grid slice116x140. All frames produce Ship.anim and AnimatorController. Ship pos(0,-5,0), scale(1,-1,1), SpriteRenderer.OrderInLayer1. PolygonCollider2D IsTrigger=true. Visible animated engines required."
+          ]
+        },
+        {
+          "id": "15.3",
+          "title": "Метеор",
+          "printed_pages": "293–294",
+          "requirements": [
+            "Meteor folder, meteor.png sliced Automatic into19frames, Meteor animation/controller. CircleCollider2D non-trigger, Rigidbody2D GravityScale0, OrderInLayer1. Saved Meteor.prefab and no initial orphan instance in scene."
+          ]
+        },
+        {
+          "id": "15.4",
+          "title": "Снаряд и дробилки",
+          "printed_pages": "295–296",
+          "requirements": [
+            "Bullet folder, bullet.png PPU400, tint green, OrderInLayer1, CircleCollider2D+Rigidbody2D GravityScale0; real Bullet.prefab. Two empty Shredder objects at(0,-10,0),(0,10,0), BoxCollider2D IsTrigger=true size(16,1), DestroyOnTrigger.cs deletes passing bullets/meteors."
+          ]
+        },
+        {
+          "id": "15.5",
+          "title": "UI и GameManager",
+          "printed_pages": "296–299",
+          "requirements": [
+            "Canvas/Text Score upper-left anchor, anchoredPosition(100,-30,0), initial0, white. Game Over center pos0, width200,height100, red centered BestFit, Text.enabled=false. GameManager.scoreText/gameOverText connected. AddScore increments one and writes label; PlayerDied enables GameOver text and freezes Time.timeScale0."
+          ]
+        },
+        {
+          "id": "15.6",
+          "title": "Скрипты метеора и спауна",
+          "printed_pages": "299–301",
+          "requirements": [
+            "MeteorMover sets Rigidbody2D velocity(0,-2). Meteor Spawn empty pos(0,8,0), MeteorSpawn.meteorPrefab connected, minSpawnDelay1,max3,spawnXLimit6; Invoke repeatedly spawns at random x[-6,6]."
+          ]
+        },
+        {
+          "id": "15.7",
+          "title": "ShipControl и Bullet",
+          "printed_pages": "302–305",
+          "requirements": [
+            "ShipControl references GameManager/BulletPrefab; speed10,xLimit7,reloadTime0.5. Base movement ONLY Horizontal; clamp x; press Jump/Space spawns at ship+(0,1.2,0) at most2shots/s. Bullet speed10 upward via Rigidbody2D; OnCollisionEnter2D destroys Meteor and self and calls AddScore exactly once. Nontrigger meteor/bullet vs trigger ship deliberate."
+          ]
+        },
+        {
+          "id": "15.E",
+          "title": "Внешний плейтест и улучшения",
+          "printed_pages": "305–307",
+          "requirements": [
+            "Let real diverse users play and record actual feedback; then choose improvements. Suggested alternatives: bullets/shot trajectories, double shot, increasing spawn, meteor variants, shield, movement in two axes. Keep base book scene separately if modifying rules."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Background uses original art and scrolls continuously; ship/meteor animation visible.",
+        "Ship stays within screen; never exceeds2shots/s in base scene.",
+        "One bullet hit gives exactly one point; meteor-ship collision displays GameOver and stops.",
+        "Shredders remove offscreen objects; no runaway count.",
+        "Real feedback recorded, not fabricated."
+      ],
+      "old_scaffold_defects": [
+        "Old implementation used square colors, independent tiny stars, omitted all 19frame animation and collider shape.",
+        "Old fire .17s (~6shots/s) and vertical movement differ from book baseline.",
+        "No authored shredder/score GameOver states, no real feedback."
+      ],
+      "external_or_visual_requirements": [
+        "External players needed for final exercise."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 16,
+      "title": "Системы частиц",
+      "printed_pages": "308–327",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Standard Assets/ParticleSystems package",
+        "Standard Assets/ParticleSystems/Prefabs/FireComplex.prefab",
+        "Smoke.prefab",
+        "Explosion and fireworks prefabs and textures/materials"
+      ],
+      "units": [
+        {
+          "id": "16.1",
+          "title": "Создание системы",
+          "printed_pages": "309",
+          "requirements": [
+            "Default ParticleSystem scene; editable rotation/scale and inspectable emission."
+          ]
+        },
+        {
+          "id": "16.2",
+          "title": "Настройка столкновения",
+          "printed_pages": "320–321",
+          "requirements": [
+            "Sphere at(0,5,0),scale(3,3,3),Rigidbody. ParticleSystem pos0, EmissionRateOverTime100. Collision enabled TypeWorld, ColliderForce20; particles collide and can support sphere. Book intro mentions Plane too; preserve explicit World setup and an inspectable Plane variant."
+          ]
+        },
+        {
+          "id": "16.3",
+          "title": "Curves Editor",
+          "printed_pages": "325–326",
+          "requirements": [
+            "Separate ParticleSystem at0; Main.StartSize mode Curve range2, normalized keys start0/middle peak/end0 over default5second duration. This is start size over emitter cycle, not SizeOverLifetime substitution."
+          ]
+        },
+        {
+          "id": "16.E",
+          "title": "Стандартные эффекты",
+          "printed_pages": "327",
+          "requirements": [
+            "Import full ParticleSystems package. Use actual FireComplex and Smoke prefabs; inspect explosion/firework too. Keep referenced texture sheets/materials/shaders. Additional own effects allowed."
+          ]
+        }
+      ],
+      "required_checks": [
+        "No pink/missing material particles after save/reload.",
+        "World collision force interacts with Rigidbody sphere.",
+        "StartSize curve visibly modulates emitted particles over 5seconds.",
+        "Original FireComplex,Smoke present and functional."
+      ],
+      "old_scaffold_defects": [
+        "Old project has four generic emitters with no original standard particle textures/prefabs and omits physics and start-size curve practicums."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 17,
+      "title": "Анимация",
+      "printed_pages": "329–344",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "RobotBoyRunSprite.png from 2D Standard Assets or hour17 examples"
+      ],
+      "units": [
+        {
+          "id": "17.1",
+          "title": "Нарезка спрайтов и анимация",
+          "printed_pages": "332–334",
+          "requirements": [
+            "New2D project/scene, import RobotBoyRunSprite.png, Multiple, grid slice64x64,Offset0,Padding0,PivotCenter (visually verified fig17.3). Build actual sprite animation and AnimatorController, RobotRun sample12fps. SpriteRenderer.sprite changes through full frames."
+          ]
+        },
+        {
+          "id": "17.2",
+          "title": "Пусть объект вращается",
+          "printed_pages": "337–338",
+          "requirements": [
+            "New3D scene Cube at0, ObjectSpinAnim.anim, Rotation.y0->360 between0:00 and1:00(60fps). Save actual clip/controller."
+          ]
+        },
+        {
+          "id": "17.3",
+          "title": "Режим записи цвета",
+          "printed_pages": "339–340",
+          "requirements": [
+            "CubeColor material assigned; animate RGBA colors in spinning animation; initial red(1,0,0,1), other colors allowed, last at1sec matches first for loop."
+          ]
+        },
+        {
+          "id": "17.4",
+          "title": "Curves Editor",
+          "printed_pages": "342",
+          "requirements": [
+            "Rotation.y curve edited to straight smooth continuous spin; inspect actual saved tangents rather than only transform.Rotate script."
+          ]
+        },
+        {
+          "id": "17.E",
+          "title": "Песочница",
+          "printed_pages": "343–344",
+          "requirements": [
+            "Additional saved clips demonstrate wide arc flight, Renderer enabled/disabled blinking, local scale and material property changes."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Actual sprite run clip cycles original frames, no static rectangle.",
+        "Cube rotates full turn seamlessly and color loops; saved animation clips editable in Animation window.",
+        "Renderer blinking/arc/scale clips visibly work after scene reload."
+      ],
+      "old_scaffold_defects": [
+        "Old project only arc/blink/scale cube, omits RobotBoy sprite animation and rotating ObjectSpinAnim/CubeColor practicum."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 18,
+      "title": "Аниматоры и гуманоидный mapping",
+      "printed_pages": "345–368",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Standard Assets/Characters/ThirdPersonCharacter/Models/Ethan.fbx plus EthanBody/EthanGlasses textures/materials",
+        "Animations/Idles.fbx",
+        "Animations/WalkForward.fbx",
+        "Animations/WalkForwardTurns.fbx",
+        "Checker.tga",
+        "Standard Assets/Characters/ThirdPersonCharacter/Prefabs/ThirdPersonController.prefab (investigation exercise)"
+      ],
+      "units": [
+        {
+          "id": "18.1",
+          "title": "Скелет Ethan",
+          "printed_pages": "347–351",
+          "requirements": [
+            "Import entire Characters package, actual textured Ethan model. Rig.AnimationTypeHumanoid; valid Avatar mapping. Configure window Mapping binds body/head/arms/legs correctly. This cannot be fulfilled by replacing humanoid with capsule."
+          ]
+        },
+        {
+          "id": "18.2",
+          "title": "Подготовка клипов",
+          "printed_pages": "351–356",
+          "requirements": [
+            "Import original Animations. All FBX RigHumanoid. Idles: Idle frame128–1100 (visually verified fig18.6), LoopTime and LoopPose true, all RootTransform BakeIntoPose true. WalkForward clip renamed WalkForwardStraight, first215.2,last244.9, loop time/pose true, bake rotation+Y, preserve XZ movement; RotationOffset3.53 makes AverageVelocity.x0 (visually verified fig18.9). Turns: WalkForwardTurnRight frames122–152,loopTime/loopPose true,rotation BakeIntoPosefalse/BodyOrientation/offset0,YBakeIntoPosetrue/Feet,XZBakeIntoPosefalse/CenterOfMass (visually verified fig18.10); duplicate WalkForwardTurnLeft with identical settings+Mirror=true."
+          ]
+        },
+        {
+          "id": "18.3",
+          "title": "Настройка сцены",
+          "printed_pages": "357–359",
+          "requirements": [
+            "Ethan pos(0,0,-5), MainCamera child of Ethan local(0,1.5,-1.5),rot(20,0,0). AnimatorController Animators/PlayerAnimator assigned with Avatar. Plane pos(0,0,-5),scale(10,1,10). Checker material uses original Checker.tga Albedo; actual texture mapping retained."
+          ]
+        },
+        {
+          "id": "18.4",
+          "title": "Контроллер",
+          "printed_pages": "359–364",
+          "requirements": [
+            "Idle default state from Idles.fbx, FootIK=true. Float parameters Speed and Direction. Walking state is1DBlendTree by Direction, thresholds -1/0/1 map WalkForwardTurnLeft/Straight/Right. Idle->Walking condition SpeedGreater0.1; Walking->Idle SpeedLess0.1; disable HasExitTime."
+          ]
+        },
+        {
+          "id": "18.5",
+          "title": "AnimationControl",
+          "printed_pages": "365–366",
+          "requirements": [
+            "AnimationControl.cs attached to Ethan. Get Animator then SetFloat Speed=Input.GetAxis(Vertical), Direction=Input.GetAxis(Horizontal). WASD/arrows drive walk/turn and root motion; retain correct root motion behavior."
+          ]
+        },
+        {
+          "id": "18.E",
+          "title": "Изучение Mecanim",
+          "printed_pages": "367–368",
+          "requirements": [
+            "Read Mecanim docs and inspect actual ThirdPersonController.prefab with Grounded/Airborne/Crouching trees. This is additional study of Standard Assets, not replacement of the authored Idle/Walking controller."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Valid humanoid Avatar in Configure Mapping; textured skinned humanoid, no missing bones/materials.",
+        "Clip trimming and mirror/root-motion settings persisted; feet not skating in Idle (FootIK).",
+        "Speed/Direction drive Idle/Walking/turn blending; camera follows as child.",
+        "Plane Checker Albedo mapped; actual ThirdPersonController investigation separately accessible."
+      ],
+      "old_scaffold_defects": [
+        "Old capsule and fake vertical-bob clips entirely omit humanoid mapping, FBX clip preparation, retargeting, skins, Checker map.",
+        "Old controller Speed+Crouch+Jump/Grounded trees incorrectly substitutes optional prefab inspection for main exercise."
+      ],
+      "external_or_visual_requirements": [
+        "Figures18.6,18.9,18.10,18.11 visually inspected; frame ranges/root settings recorded."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 19,
+      "title": "Timeline",
+      "printed_pages": "369–383",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Hour19/Animations/{Red,Orange,Yellow,Green,Blue,Indigo,Violet} clips",
+        "Hour19/Audio/Beep High clip"
+      ],
+      "units": [
+        {
+          "id": "19.1",
+          "title": "Ассет таймлайна",
+          "printed_pages": "372",
+          "requirements": [
+            "Timelines folder, real TimelineAsset and empty Director GameObject with PlayableDirector pointing to asset."
+          ]
+        },
+        {
+          "id": "19.2",
+          "title": "Треки",
+          "printed_pages": "375",
+          "requirements": [
+            "Cube at0. AnimationTrack bound to Cube Animator; AudioTrack present (can be unbound)."
+          ]
+        },
+        {
+          "id": "19.3",
+          "title": "Последовательности",
+          "printed_pages": "376–377",
+          "requirements": [
+            "Import actual Animations and Audio folders. Seven color clips ordered Red,Orange,Yellow,Green,Blue,Indigo,Violet; one BeepHigh per color, audio starts aligned with color changes. Persistent track bindings, timeline audio plays in PlayMode."
+          ]
+        },
+        {
+          "id": "19.4",
+          "title": "Смешивание",
+          "printed_pages": "379–380",
+          "requirements": [
+            "Overlap adjacent color clips by50%. Orange begins frame30 ends90; continue continuous mix through rainbow; beeps move to new start of corresponding color clips. Preserve unblended sequence as separate timeline/scene if showing whole lesson."
+          ]
+        },
+        {
+          "id": "19.5",
+          "title": "InputControl",
+          "printed_pages": "381",
+          "requirements": [
+            "Director.PlayOnAwake=false; InputControl reads Jump/Space; if director.state Paused calls Play otherwise Stop. No auto-start when entering Play."
+          ]
+        },
+        {
+          "id": "19.E",
+          "title": "Опыты",
+          "printed_pages": "383",
+          "requirements": [
+            "Additional dynamic UI animation, guard patrol, camera animation series, activation-light strobe as suggested extension. These do not replace rainbow/audio main timeline."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Seven colors and synchronized beeps work, actual overlap creates interpolation.",
+        "Space starts/stops, no auto-start.",
+        "Every timeline binding restored after reload; audio output audible.",
+        "At least selected optional extension is explicit and visible."
+      ],
+      "old_scaffold_defects": [
+        "Old scene only guard/camera/strobe. Missing whole main rainbow+audio sequence, overlap task and Space control; PlayOnAwake wrong."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 20,
+      "title": "Игра четвёртая: Бег с препятствиями",
+      "printed_pages": "384–403",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Hour20/Materials (Ground,Wall,Dark Sky)",
+        "Hour20/Textures (all referenced Albedo/normal maps)",
+        "Hour20/Models/Player.fbx and textured Player material",
+        "Hour20/Animations/Runs.fbx",
+        "PhasedOut material and Hologram shader from hour20 Models",
+        "Source project Adventure/Unity (assetstore76216)",
+        "HologramShader github.com/andydbc/HologramShader"
+      ],
+      "units": [
+        {
+          "id": "20.1",
+          "title": "Сцена и текстурированный коридор",
+          "printed_pages": "385–388",
+          "requirements": [
+            "Gauntlet Runner3D project, Scene/Main.unity. Camera pos(0,3,-10.7),rot(33,0,0). Import original Materials/Textures with.meta preserving GUID texture bindings. Dark Sky Skybox/Procedural applied. Ground cube pos(0,0,15.5),rot(0,180,0),scale(10,.5,50). Walls quads at(-5.25,1.2,15.5),(5.25,1.2,15.5),rot(0,-90,0),scale(50,2,1); inspect visual facing. Apply original metallic tiled Ground material and glowing Wall material."
+          ]
+        },
+        {
+          "id": "20.2",
+          "title": "UV-прокрутка",
+          "printed_pages": "388",
+          "requirements": [
+            "TextureScroller.cs on Ground speed.5, increment offset by deltaTime*speed, wrap >1 subtract1; renderer.material.mainTextureOffset=(0,offset). Mesh stays stationary. This explicit texture mapping/tiling exercise is mandatory."
+          ]
+        },
+        {
+          "id": "20.3",
+          "title": "Powerup",
+          "printed_pages": "389–390",
+          "requirements": [
+            "Sphere pos(0,1.5,42),scale(.5,.5,.5),Rigidbody UseGravityfalse. Powerup yellow material Metallic0 Smoothness1; yellow PointLight. ParticleSystem lifetime.5,speed-5,size.3,light-yellow; emission30,shapeSphere radius1,StretchedBillboard LengthScale5,Default-Particle material. Save Prefabs/Powerup.prefab and remove scene instance."
+          ]
+        },
+        {
+          "id": "20.4",
+          "title": "Obstacle и TriggerZone",
+          "printed_pages": "390–391",
+          "requirements": [
+            "Obstacle cube pos(0,.4,42),scale(1,.2,1),RigidbodyNoGravity,red Light; red material with darkred Emission. Save Prefabs/Obstacle.prefab, remove scene instance. TriggerZone cube pos(0,1,-20),scale(10,1,1),BoxCollider IsTriggertrue; TriggerZone.cs destroys passing objects."
+          ]
+        },
+        {
+          "id": "20.5",
+          "title": "Игрок и Run",
+          "printed_pages": "391–393",
+          "requirements": [
+            "Import actual Models/Animations. Player.fbx RigHumanoid; scene pos(0,.25,-8.5),tagPlayer. CapsuleCollider IsTriggertrue centerY.7 radius.3 height1.5. Runs.fbx Humanoid, Run frames302–319,LoopTime/LoopPose true,RootRotation BakeIntoPosetrue/BodyOrientation/Offset-4.81,YBakeIntoPosetrue/Original,XZBakeIntoPosefalse/CenterOfMass,AverageVelocity.x0 (visually verified fig20.6). PlayerAnimator.Run speed.7,FootIKtrue,Animator.ApplyRootMotionfalse."
+          ]
+        },
+        {
+          "id": "20.6",
+          "title": "GameManager и Player",
+          "printed_pages": "394–398",
+          "requirements": [
+            "GameManager.ground references TextureScroller; gameTime10; elapsed/time countdown; AdjustTime(amount), amount<0 sets Time.timeScale.5 then returns1 after1scaledsec via Invoke, CancelInvoke handles repeated hits. End only when time<=0, not on collision. Player references normalMatPlayer/phasedMatPhasedOut and manager; bounds3,strafeSpeed4,phaseCooldown2; Horizontal movement clamps[-3,3]; Jump phases via material swap and disabling collider, reenable after2sec. Cannot collect bonuses while phased."
+          ]
+        },
+        {
+          "id": "20.7",
+          "title": "Collidable и Spawner",
+          "printed_pages": "398–401",
+          "requirements": [
+            "Collidable.moveSpeed20; powerup.timeAmount+1.5,obstacle.timeAmount-.5. OnTriggerEnter taggedPlayer adjusts manager and deletes self. Spawner on GameManager.spawnCycle.5; alternate bonus/obstacle, retain prefab positions atz42, randomx[-3,3], assign manager reference on instance. Wire all references."
+          ]
+        },
+        {
+          "id": "20.E",
+          "title": "Улучшения",
+          "printed_pages": "402–403",
+          "requirements": [
+            "Optional more bonus/obstacle types, modern UGUI instead of legacy OnGUI, tune spawn/time/slowdown, richer particle/textures, distance and increasing speed. Keep base rules scene separate."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Floor geometry stationary, original tiling texture visibly scrolls via UV offset; textured illuminated walls and DarkSky.",
+        "Actual rigged skinned Player runs in place at correct speed; no side drift.",
+        "Space swaps to visible Hologram and disables collider2sec; no bonuses taken while phased.",
+        "Powerup adds1.5sec; obstacle removes.5sec and halves world speed then restores; collision does not directly end game.",
+        "Spawn alternates every.5sec; old objects destroyed at TriggerZone; game starts10sec."
+      ],
+      "old_scaffold_defects": [
+        "Old colored floor and capsule omit all UV mapping/TextureScroller, original textures/walls/sky and custom Hologram shader.",
+        "Old collision immediately loses and green bonus+5sec/time60 differs from mandatory main rules; no phase or slowdown."
+      ],
+      "external_or_visual_requirements": [
+        "Real external feedback encouraged; do not fabricate.",
+        "Preserve original .meta for texture-material-model bindings."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 21,
+      "title": "Работа со звуком",
+      "printed_pages": "404–418",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Sounds/looper.ogg",
+        "Sounds/quick_laser.ogg",
+        "Sounds/xxplosion.ogg"
+      ],
+      "units": [
+        {
+          "id": "21.1",
+          "title": "Проверка звука",
+          "printed_pages": "408",
+          "requirements": [
+            "Import real Sounds folder; Cube at0 AudioSource.cliplooper.ogg,PlayOnAwaketrue, loop off. It plays original roughly20sec track and stops."
+          ]
+        },
+        {
+          "id": "21.2",
+          "title": "Звук на Scene и3D",
+          "printed_pages": "409–410",
+          "requirements": [
+            "Scene audio switch enables listening while navigating. Demonstrate defaultSpatialBlend0 unchanged by distance thenSpatialBlend1 with attenuation by distance; keep separate inspectable variants."
+          ]
+        },
+        {
+          "id": "21.3",
+          "title": "Запуск и остановка",
+          "printed_pages": "412",
+          "requirements": [
+            "Cube AudioSource.PlayOnAwakefalse,Looptrue, AudioScript.cs toggles Stop/Play on Jump/Space; each restart from beginning."
+          ]
+        },
+        {
+          "id": "21.4",
+          "title": "Аудиомикшер",
+          "printed_pages": "413–415",
+          "requirements": [
+            "Create actual AudioMixer asset, Master and chosen groups; route AudioSource.Output to group; mixer controls shared volume/effects. Material demonstration irrelevant here; no need invented textures."
+          ]
+        },
+        {
+          "id": "21.E",
+          "title": "Звуковая карта",
+          "printed_pages": "417–418",
+          "requirements": [
+            "New scene Cube pos(0,0,-10),AudioSource.PlayOnAwakefalse; AudioScript public clip1/2/3 assigned actual looper/quick_laser/xxplosion; Start choosesclip1; 1/2/3 Stop,swap,Play; Space toggles PlayStop; L togglesloop."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Original clips audible, switching sounds really changes content.",
+        "Play/Stop starts at beginning; Loop toggle works.",
+        "3D variant attenuates by camera distance; mixer routing survives scene reload."
+      ],
+      "old_scaffold_defects": [
+        "Old synthetic sine/noise tones are not original clips and omit spatial/mixer practicums."
+      ],
+      "external_or_visual_requirements": [],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 22,
+      "title": "Разработка для мобильных устройств",
+      "printed_pages": "419–430",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Unity Remote5 app on real device",
+        "SDK and Unity build module if building to Android/iOS"
+      ],
+      "units": [
+        {
+          "id": "22.1",
+          "title": "Настройка Remote",
+          "printed_pages": "422–423",
+          "requirements": [
+            "Scene with central UI Button, PressedColorred. Device viaUSB, openUnityRemote; EditorSettings UnityRemote.Device appropriate. Confirm desktop click then real-device tap changes button color."
+          ]
+        },
+        {
+          "id": "22.2",
+          "title": "Акселерометр",
+          "printed_pages": "425",
+          "requirements": [
+            "Cube at0; AccelerometerScript Update x=Input.acceleration.x*deltaTime,z=-Input.acceleration.z*deltaTime; Translate(x,0,z). Device parallel toground; demonstrate actual tilt movement."
+          ]
+        },
+        {
+          "id": "22.3",
+          "title": "Отслеживание касаний",
+          "printed_pages": "427",
+          "requirements": [
+            "TouchScript on MainCamera; show per-touch fingerId,phase,tapCount,positionX/Y. OnGUI labels laid out130px apart by ID in book; touch data must remain visible for real fingers."
+          ]
+        },
+        {
+          "id": "22.E",
+          "title": "Независимое управление3кубами",
+          "printed_pages": "429–430",
+          "requirements": [
+            "Cube1(-3,1,-5),Cube2(0,1,-5),Cube3(3,1,-5). InputScript per cube maps fingers and deltaPosition*.05 into X/Y. Book code assumes IDs0/1/2; robust equivalent may retain stable arbitrary finger mapping if explicitly documented. Lift/readd fingers does not move the other cubes."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Actual Remote device interaction button+accelerometer+multitouch.",
+        "Three independent cube control and persistent finger identity across lifting middle finger.",
+        "Mouse fallback must be labeled fallback, cannot constitute device verification."
+      ],
+      "old_scaffold_defects": [
+        "Old only cube demo with mouse fallback; omitted Remote button, accelerometer and touch-information scenes."
+      ],
+      "external_or_visual_requirements": [
+        "Real compatible phone/USB/Remote required; external blocker if unavailable."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 23,
+      "title": "Доработка и развертка",
+      "printed_pages": "431–445",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [
+        "Any earlier playable project for final deployment",
+        "No completed final build project supplied by book for this exercise"
+      ],
+      "units": [
+        {
+          "id": "23.1",
+          "title": "Сцены в сборке",
+          "printed_pages": "433",
+          "requirements": [
+            "Scenes/Scene1.unity index0,Scene2.unity index1 inBuildSettings."
+          ]
+        },
+        {
+          "id": "23.2",
+          "title": "Переключение и сохранение объекта",
+          "printed_pages": "435–436",
+          "requirements": [
+            "Scene2 Sphere(0,2,0),Scene1 Cube(0,0,0). DontDestroy.cs attachedCube,Start DontDestroyOnLoad(this); OnMouseDown loadsScene1index=1 (Scene2). Saved cube remains and sphere appears. For correct dynamic-scene lighting disableAutoGenerate and GenerateLighting; preserve generated lighting data."
+          ]
+        },
+        {
+          "id": "23.3",
+          "title": "PlayerPrefs",
+          "printed_pages": "437–438",
+          "requirements": [
+            "Scene1 MainCamera SaveData.cs with playerName,TextField rect(5,120,100,30), Save buttonrect(5,180,50,50) usesPlayerPrefs.SetString(name,playerName). Scene2 camera LoadData StartGetString(name), GUI.Labelrect(5,220,50,30). Enter/save name,clickcube to change scene, name displays; persists across relaunch."
+          ]
+        },
+        {
+          "id": "23.4",
+          "title": "PlayerSettings/BuildSettings",
+          "printed_pages": "438–443",
+          "requirements": [
+            "Company/ProductName, squareicon and appropriate display/platform settings; PCMacLinuxStandalone, correct scene order. Use Input axes remappable via legacy standalone Input config, not all hard-coded keys."
+          ]
+        },
+        {
+          "id": "23.E",
+          "title": "Сборка и запуск",
+          "printed_pages": "444–445",
+          "requirements": [
+            "Build actual executable for target machine and run independently of Editor, experiment with player/game settings. Distribute full datafolder and required DLL, not nakedEXE."
+          ]
+        }
+      ],
+      "required_checks": [
+        "ClickCube changes Scene1->Scene2 and retains same Cube; no duplicate camera/audio errors.",
+        "Saved name loads inScene2 and after process restart.",
+        "Scene2 lighting correct after dynamic load.",
+        "Actual Windows build succeeds and launches with scenes+input."
+      ],
+      "old_scaffold_defects": [
+        "Old chapter23 simply cloned racer; omitted every mandatory scene/persistence/PlayerPrefs practicum.",
+        "No EXE created or launched."
+      ],
+      "external_or_visual_requirements": [
+        "Native executable must be built and launched for readiness; Linux local syntax checks insufficient."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    },
+    {
+      "hour": 24,
+      "title": "Подведение итогов",
+      "printed_pages": "446–451",
+      "source": "User supplied PDF; PDF page = printed page + 1",
+      "original_assets": [],
+      "units": [
+        {
+          "id": "24.E",
+          "title": "Письменный разбор",
+          "printed_pages": "451",
+          "requirements": [
+            "Deliver actual written postmortem about ONE game made earlier: what worked, what did not, encountered pitfalls and lessons. Reflect real development and test evidence; no fictional user interviews/performance results. Suggested printout placed inbook. No unique3Dscene or EXE prescribed for this hour."
+          ]
+        }
+      ],
+      "required_checks": [
+        "Written document exists and refers to actual implementation and results; clearly separates unresolved issues and observations."
+      ],
+      "old_scaffold_defects": [
+        "Old menu/game copy irrelevant to actual writing exercise; blank placeholders alone do not constitute completed report."
+      ],
+      "external_or_visual_requirements": [
+        "Personal observations require user input or transparent agent-authored development facts."
+      ],
+      "status": "requirements audited from book; implementation and Unity validation not performed by this audit"
+    }
+  ]
+}

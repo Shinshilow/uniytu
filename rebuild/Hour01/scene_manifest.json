@@ -1,0 +1,20 @@
+{
+  "hour": 1,
+  "version": "2018.1.0f1",
+  "runtime_scripts": 0,
+  "scenes": [
+    {
+      "path": "Assets/Scenes/03_Exercise_Cube.unity",
+      "guid": "4be683b73cbaffcaca091fe36c2ce1f8"
+    },
+    {
+      "path": "Assets/Scenes/01_NewProject.unity",
+      "guid": "56b7f37deff3db14de9078bc96fd4a24"
+    },
+    {
+      "path": "Assets/Scenes/02_EditorNavigation.unity",
+      "guid": "8f2d17b777ae95934e382ee172167fd8"
+    }
+  ],
+  "validation": "Static serialized-reference checks only; Unity deserialization and Play have not run."
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "project": "/workspace/uniytu/rebuild/Hour07",
+    "scenes": [
+      {
+        "path": "Assets/Scenes/01_HelloWorld.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/02_ImportantFunctions.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/03_OperatorsStudy.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/04_Exercise_ThreeScripts.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      }
+    ],
+    "materials": [],
+    "textured_materials": 0,
+    "normal_materials": 0,
+    "duplicate_guids": [],
+    "unresolved_guids": [],
+    "unity_compilation": "UNRUN",
+    "play_mode": "UNRUN"
+  },
+  {
+    "project": "/workspace/uniytu/rebuild/Hour08",
+    "scenes": [
+      {
+        "path": "Assets/Scenes/01_Methods.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/02_PlayerInput.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/03_KeyInput.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/04_MouseInput.unity",
+        "gameobjects": 2,
+        "renderers": 0
+      },
+      {
+        "path": "Assets/Scenes/05_LocalCube.unity",
+        "gameobjects": 3,
+        "renderers": 1
+      },
+      {
+        "path": "Assets/Scenes/06_TargetCube.unity",
+        "gameobjects": 3,
+        "renderers": 1
+      },
+      {
+        "path": "Assets/Scenes/07_Exercise.unity",
+        "gameobjects": 3,
+        "renderers": 1
+      }
+    ],
+    "materials": [],
+    "textured_materials": 0,
+    "normal_materials": 0,
+    "duplicate_guids": [],
+    "unresolved_guids": [],
+    "unity_compilation": "UNRUN",
+    "play_mode": "UNRUN"
+  }
+]

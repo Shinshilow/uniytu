@@ -1,0 +1,24 @@
+{
+  "hour": 2,
+  "version": "2018.1.0f1",
+  "runtime_scripts": 0,
+  "scenes": [
+    {
+      "path": "Assets/Scenes/03_Exercise_ParentChild.unity",
+      "guid": "319cbb4fc52d151bd1d222655b5823e0"
+    },
+    {
+      "path": "Assets/Scenes/01_GameObjects.unity",
+      "guid": "871ec7ccdfe84e2f24ec2b7c66493c07"
+    },
+    {
+      "path": "Assets/Scenes/02_TransformTools.unity",
+      "guid": "864461303259f0b4c88adea1a582722b"
+    },
+    {
+      "path": "Assets/Scenes/04_ParentTransformExperiment.unity",
+      "guid": "0cdafbed74fe4cd05987f6c41ad6facb"
+    }
+  ],
+  "validation": "Static serialized-reference checks only; Unity deserialization and Play have not run."
+}

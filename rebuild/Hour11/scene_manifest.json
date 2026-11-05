@@ -1,0 +1,50 @@
+{
+  "hour": 11,
+  "version": "2018.1.0f1",
+  "runtime_scripts": 1,
+  "scenes": [
+    {
+      "path": "Assets/Scenes/06_Exercise_Spawn.unity",
+      "guid": "9a4c8c58ec52b17e51eab3aaa94efaba"
+    },
+    {
+      "path": "Assets/Scenes/01_CreateLamp.unity",
+      "guid": "c406c78cfd6c93b78811847e21921102"
+    },
+    {
+      "path": "Assets/Scenes/Lamps.unity",
+      "guid": "05319356b5ae2a4a61e09e3d12fba8ef"
+    },
+    {
+      "path": "Assets/Scenes/03_AssetRedSnapshot.unity",
+      "guid": "4cd0b49e169c5a9d1bd0f7ba406c20b5"
+    },
+    {
+      "path": "Assets/Scenes/04_OneWhiteOverride.unity",
+      "guid": "0466c157b1af08e241cd7e7e1a63a9a2"
+    },
+    {
+      "path": "Assets/Scenes/05_AfterApplyWhite.unity",
+      "guid": "327936ecdc509e1f37cd3f7ea399d199"
+    }
+  ],
+  "validation": "Static serialized-reference checks only; Unity deserialization and Play have not run.",
+  "native_scenes": 6,
+  "old_format_prefab_assets": 2,
+  "connected_instances": 17,
+  "native_external_and_internal_refs": "PASS",
+  "unity_import": "UNRUN",
+  "unity_api_compile": "UNRUN",
+  "play_mode": "UNRUN",
+  "source_requirements": [
+    "11-P01",
+    "11-P02",
+    "11-P03",
+    "11-E01"
+  ],
+  "prefab_assets": [
+    "Assets/Prefabs/Lamp.prefab",
+    "Assets/Prefabs/UpdateStages/Lamp_RedSnapshot.prefab"
+  ],
+  "source_format_reference": "Unity-Technologies/Standard-Assets-Characters @ c241d4d003e1aa6854ced6f83e7b87f7c7d98a23, OldBase native files (no third-party assets copied)"
+}

@@ -1,0 +1,41 @@
+{
+  "hour": 7,
+  "version": "2018.1.0f1",
+  "runtime_scripts": 6,
+  "scenes": [
+    {
+      "path": "Assets/Scenes/04_Exercise_ThreeScripts.unity",
+      "guid": "5df1d62972ba66a7aa97a2119ddd012b"
+    },
+    {
+      "path": "Assets/Scenes/01_HelloWorld.unity",
+      "guid": "c25fe005c083a3d64f033a418d16a051"
+    },
+    {
+      "path": "Assets/Scenes/02_ImportantFunctions.unity",
+      "guid": "3c726115339d3b438c535ae58eecf7f7"
+    },
+    {
+      "path": "Assets/Scenes/03_OperatorsStudy.unity",
+      "guid": "2e8cf92983d09c459725fa06deaadb8a"
+    }
+  ],
+  "validation": "Static serialized-reference checks only; Unity deserialization and Play have not run.",
+  "unity_api_compilation": "UNRUN",
+  "play_mode": "UNRUN",
+  "source_requirements": [
+    "07-P01",
+    "07-P02",
+    "07-A01",
+    "07-E01"
+  ],
+  "written_work": "Семинар.md",
+  "companion_file_unavailable": "EqualityAndOperations.cs; OperatorsStudy is an explicitly independent reading aid.",
+  "expected_exercise_outputs": {
+    "even_sum": 62250,
+    "numbers_count": 100,
+    "replacement_count": 47,
+    "fibonacci_terms": 20,
+    "fibonacci_last": 4181
+  }
+}

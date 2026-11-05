@@ -1,0 +1,67 @@
+{
+  "hour": 8,
+  "version": "2018.1.0f1",
+  "runtime_scripts": 7,
+  "scenes": [
+    {
+      "path": "Assets/Scenes/07_Exercise.unity",
+      "guid": "9d69bfd474fb97dd914b5b1972110baf"
+    },
+    {
+      "path": "Assets/Scenes/01_Methods.unity",
+      "guid": "cebed2682db59916cbcffaea6a84afb6"
+    },
+    {
+      "path": "Assets/Scenes/02_PlayerInput.unity",
+      "guid": "69534dc2c761054f1828ab52f9b63669"
+    },
+    {
+      "path": "Assets/Scenes/03_KeyInput.unity",
+      "guid": "2ea60aa150f176cd6e4f8a281b8dce54"
+    },
+    {
+      "path": "Assets/Scenes/04_MouseInput.unity",
+      "guid": "e797dd781006c449ff9eb5ad5a5cb3ff"
+    },
+    {
+      "path": "Assets/Scenes/05_LocalCube.unity",
+      "guid": "384196665ce897a8132c760ce9b29f2c"
+    },
+    {
+      "path": "Assets/Scenes/06_TargetCube.unity",
+      "guid": "3c28fd6882a97b63c5ff042b33c161e2"
+    }
+  ],
+  "validation": "Static serialized-reference checks only; Unity deserialization and Play have not run.",
+  "source_requirements": [
+    "08-P01",
+    "08-P02",
+    "08-P03",
+    "08-P04",
+    "08-P05",
+    "08-P06",
+    "08-P07",
+    "08-E01"
+  ],
+  "written_work": "Ответы_методы.md",
+  "input_mappings": {
+    "Horizontal": [
+      "left",
+      "right",
+      "a",
+      "d"
+    ],
+    "Vertical": [
+      "down",
+      "up",
+      "s",
+      "w"
+    ],
+    "Mouse X": "X axis",
+    "Mouse Y": "Y axis",
+    "direct_keys": [
+      "M",
+      "O"
+    ]
+  }
+}

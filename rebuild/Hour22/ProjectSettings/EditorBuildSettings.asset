@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/01_UnityRemoteButton.unity
+    guid: 65661aa3eb9aae399e8193beb2af4935
+  - enabled: 1
+    path: Assets/Scenes/02_Accelerometer.unity
+    guid: 9dd3251baa9a7f66c6ca6d0508b27f05
+  - enabled: 1
+    path: Assets/Scenes/03_TouchInformation.unity
+    guid: 3b149b85e91522c094afb72891353e13
+  - enabled: 1
+    path: Assets/Scenes/04_Exercise_BookInput.unity
+    guid: a469b003bae034f973fb056b42c36788
+  - enabled: 1
+    path: Assets/Scenes/05_Exercise_StableFingerIds.unity
+    guid: 0ae0d77f09a3a1e09cf7be6315c59ef0
+  m_configObjects: {}
