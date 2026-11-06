@@ -1,0 +1,755 @@
+{
+  "chapters": [
+    {
+      "hour": 1,
+      "saved_scenes": 3,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 2,
+      "saved_scenes": 4,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 3,
+      "saved_scenes": 1,
+      "materials": 4,
+      "mapped_materials": 4,
+      "normal_materials": 2,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 4,
+      "saved_scenes": 5,
+      "materials": 35,
+      "mapped_materials": 35,
+      "normal_materials": 35,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 5,
+      "saved_scenes": 1,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 6,
+      "saved_scenes": 2,
+      "materials": 22,
+      "mapped_materials": 19,
+      "normal_materials": 18,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat",
+          "guid": "9cda328e4b6954d70841a8a66f42ec08"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat",
+          "guid": "15c6acc4f11254a04b03849245d80574"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "dc30b984e8e3c4cdfb38d5fceb411602"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "4facc21e08e3a43ed97c930f7dae6e7b"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "17680dc3bf8f74b498b01cf1481e2593"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "cff6f2c02e93742c095cd0c69d3d92ce"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "a782b26d6436b48d9882906b9f8ca31a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "ff6e0fbcfc24e4f95a2711ea0e73dd6a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "0620bdf0302d84423be4aa15b82a0e11"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "eb9e91ee4c264b942a46baeec92ca0a4"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "dc30b984e8e3c4cdfb38d5fceb411602"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "4facc21e08e3a43ed97c930f7dae6e7b"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "a782b26d6436b48d9882906b9f8ca31a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "98c330f39d11745ad0004adb8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "279fb0a19d11d4a6d00051fa8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "21bb33409d118354d000dcabe39e7c39"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "006a5f739d1105f6a000538a2aef8c59"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "279fb0a19d11d4a6d00051fa8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "21bb33409d118354d000dcabe39e7c39"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterDefault.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 7,
+      "saved_scenes": 8,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 8,
+      "saved_scenes": 7,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 9,
+      "saved_scenes": 15,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 10,
+      "saved_scenes": 1,
+      "materials": 16,
+      "mapped_materials": 8,
+      "normal_materials": 6,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat",
+          "guid": "9cda328e4b6954d70841a8a66f42ec08"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat",
+          "guid": "15c6acc4f11254a04b03849245d80574"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "dc30b984e8e3c4cdfb38d5fceb411602"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "4facc21e08e3a43ed97c930f7dae6e7b"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "17680dc3bf8f74b498b01cf1481e2593"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "cff6f2c02e93742c095cd0c69d3d92ce"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "a782b26d6436b48d9882906b9f8ca31a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "ff6e0fbcfc24e4f95a2711ea0e73dd6a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "0620bdf0302d84423be4aa15b82a0e11"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat",
+          "guid": "eb9e91ee4c264b942a46baeec92ca0a4"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "dc30b984e8e3c4cdfb38d5fceb411602"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "4facc21e08e3a43ed97c930f7dae6e7b"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "a782b26d6436b48d9882906b9f8ca31a"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat",
+          "guid": "e6f8288974c664a309d6c66de636978c"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "98c330f39d11745ad0004adb8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "279fb0a19d11d4a6d00051fa8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicDaytime.mat",
+          "guid": "21bb33409d118354d000dcabe39e7c39"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "006a5f739d1105f6a000538a2aef8c59"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "279fb0a19d11d4a6d00051fa8d76c639"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterBasicNighttime.mat",
+          "guid": "21bb33409d118354d000dcabe39e7c39"
+        },
+        {
+          "file": "Assets/Standard Assets/Environment/Water (Basic)/Materials/WaterDefault.mat",
+          "guid": "c2ef94ff9d11915d1100a04b44295342"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 11,
+      "saved_scenes": 6,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 12,
+      "saved_scenes": 1,
+      "materials": 1,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/2D/Animations/RobotBoyFalling.anim",
+          "guid": "76d13a61287547d4fb40bfa27eca4e94"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 13,
+      "saved_scenes": 1,
+      "materials": 1,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/2D/Animations/RobotBoyFalling.anim",
+          "guid": "76d13a61287547d4fb40bfa27eca4e94"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 14,
+      "saved_scenes": 2,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 15,
+      "saved_scenes": 1,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 16,
+      "saved_scenes": 1,
+      "materials": 18,
+      "mapped_materials": 18,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/ParticleSystems/Prefabs/FireMobile.prefab",
+          "guid": "537536d187c5b2d409581d8728efa012"
+        },
+        {
+          "file": "Assets/Standard Assets/ParticleSystems/Prefabs/WildFire.prefab",
+          "guid": "537536d187c5b2d409581d8728efa012"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 17,
+      "saved_scenes": 2,
+      "materials": 1,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": true,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 18,
+      "saved_scenes": 1,
+      "materials": 5,
+      "mapped_materials": 3,
+      "normal_materials": 2,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "11cd8118786c19d49a6bf4fc939ad434"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "24c848a6dbf95e848950ca5403a1191e"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "1da5f9c54c49bfc488819dd2df8bb228"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "98e8896e12d39bb41a5a74e9ae897a64"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "e38eb300eb4745b4db509a224a99bbe1"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "6da89662649b53c49b06616f51157b48"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "ccb909e390d7be24e9107d33119a0eaa"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "c869773dc0bdfe042a8293344c186eaf"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController.controller",
+          "guid": "4ee731d726c3dd34eb36806ea0d8fe98"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanGrey.mat",
+          "guid": "0ca09a4614a0daa44ba043de90181896"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanGrey.mat",
+          "guid": "c6093d6055cd6a44ebf0637f17fca0e8"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanGrey.mat",
+          "guid": "6c5668bb9f9669342bfdd3eaddebb56b"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanWhite.mat",
+          "guid": "0ca09a4614a0daa44ba043de90181896"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanWhite.mat",
+          "guid": "c6093d6055cd6a44ebf0637f17fca0e8"
+        },
+        {
+          "file": "Assets/Standard Assets/Characters/ThirdPersonCharacter/Materials/EthanWhite.mat",
+          "guid": "6c5668bb9f9669342bfdd3eaddebb56b"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/DualTouchControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileAircraftControls.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/CrossPlatformInput/Prefabs/MobileSingleStickControl.prefab",
+          "guid": "01cd679a1b9ee48bf9c546f6ce2cb97e"
+        },
+        {
+          "file": "Assets/Standard Assets/Utility/Prefabs/FramerateCounter.prefab",
+          "guid": "b51a3e520f9164da198dc59c8acfccd6"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 19,
+      "saved_scenes": 3,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": true,
+      "unresolved_non_scene_source_references": [
+        {
+          "file": "Assets/Timelines/New Timeline.playable",
+          "guid": "6a10b2909283487f913b00d94cd3faf5"
+        }
+      ],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 20,
+      "saved_scenes": 1,
+      "materials": 7,
+      "mapped_materials": 3,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 21,
+      "saved_scenes": 1,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 22,
+      "saved_scenes": 5,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 23,
+      "saved_scenes": 7,
+      "materials": 0,
+      "mapped_materials": 0,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    },
+    {
+      "hour": 24,
+      "saved_scenes": 1,
+      "materials": 7,
+      "mapped_materials": 3,
+      "normal_materials": 0,
+      "pending_editor_preparation": false,
+      "unresolved_non_scene_source_references": [],
+      "engine_import": "UNRUN",
+      "engine_compilation": "UNRUN",
+      "play": "UNRUN",
+      "windows_build": "UNRUN"
+    }
+  ],
+  "fatal": [],
+  "real_mapping_regressions": "PASS",
+  "unity_checks": "UNRUN"
+}

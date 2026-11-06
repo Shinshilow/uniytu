@@ -1,0 +1,242 @@
+[
+  {
+    "hour": 1,
+    "file": "Hour01.zip",
+    "bytes": 46450,
+    "sha256": "bfb9bfe9fb585703ce8e4cb176614daed21065b2fcb2fde1ccb23819fbeb2b5f",
+    "title": "Введение в Unity",
+    "primary_scene": "Assets/Scenes/03_Exercise_Cube.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 2,
+    "file": "Hour02.zip",
+    "bytes": 55361,
+    "sha256": "e0ef3017670ac9dc5cff3787595c4045414e6a4509f5adeaba3c5265e6523ae2",
+    "title": "Игровые объекты",
+    "primary_scene": "Assets/Scenes/03_Exercise_ParentChild.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 3,
+    "file": "Hour03.zip",
+    "bytes": 10916830,
+    "sha256": "852b1c9283d1e93df628f9405d82efca9fabf9446b22ee695f965edae45288d4",
+    "title": "Модели, материалы и текстуры",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 4,
+    "file": "Hour04.zip",
+    "bytes": 68334670,
+    "sha256": "091f7188baad8bdcceb278a86e328b45bb870f7e4ede2f50e5a9eb1f724b3dec",
+    "title": "Ландшафт и элементы окружающей среды",
+    "primary_scene": "Assets/Scenes/Exercise Beach Mountains Plain.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 5,
+    "file": "Hour05.zip",
+    "bytes": 97581,
+    "sha256": "4a041d7f4a77e158f1e006577cb1dcdefcfac1ceed6ca25490fca3a002d5cd76",
+    "title": "Источники света и камеры",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 6,
+    "file": "Hour06.zip",
+    "bytes": 25788488,
+    "sha256": "6ce117f631956a582c34b2cac169d70fb4efca9aaa4ebae574ae220664d50e95",
+    "title": "Игра первая: Великолепный гонщик",
+    "primary_scene": "Assets/Scenes/Exercise Alternate Finish.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 7,
+    "file": "Hour07.zip",
+    "bytes": 85778,
+    "sha256": "8cfd05f998e4adae3175254c31c65d241ae3dae586e811910bc24e3fdc54af00",
+    "title": "Скрипты, часть 1",
+    "primary_scene": "Assets/Scenes/04_Exercise_ThreeScripts.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 8,
+    "file": "Hour08.zip",
+    "bytes": 77666,
+    "sha256": "dccffd6d5bb979826b6787bf439679e0fa9ce894b632947b16718b0bfd7a92fc",
+    "title": "Скрипты, часть 2",
+    "primary_scene": "Assets/Scenes/07_Exercise.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 9,
+    "file": "Hour09.zip",
+    "bytes": 116685,
+    "sha256": "6c0d36ed710223807d93921edcc24480814b9080ae6e3577de68e768aaea714c",
+    "title": "Столкновения",
+    "primary_scene": "Assets/Scenes/06_Exercise_TwoTriggers.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 10,
+    "file": "Hour10.zip",
+    "bytes": 8004580,
+    "sha256": "829790c87c2031ca42164c0e4d6ae4cb62f66fa05f10fce032fd75bf19104cf8",
+    "title": "Игра вторая: Шар хаоса",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 11,
+    "file": "Hour11.zip",
+    "bytes": 78850,
+    "sha256": "6d98fe4a07c051ef4f734376e1a092cc3bbe37838e7306d729cd3a7562d01922",
+    "title": "Префабы",
+    "primary_scene": "Assets/Scenes/06_Exercise_Spawn.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 12,
+    "file": "Hour12.zip",
+    "bytes": 11206268,
+    "sha256": "9b2bde5674efc65ba0c5f13b9ed532d96cdf558c80b6dccc651fed8a565673a1",
+    "title": "Инструменты создания 2D-игр",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 13,
+    "file": "Hour13.zip",
+    "bytes": 13858612,
+    "sha256": "f60e67ee393fd0da0b461c5bdeb5feaaf084a899c759218ab232c82edc38b737",
+    "title": "Тайлмапы в 2D-играх",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 14,
+    "file": "Hour14.zip",
+    "bytes": 1922909,
+    "sha256": "8c58f7d906e3c5e78fecc2273c692b7c90b91a1b077c32e1d52bafd3f41bc0da",
+    "title": "Пользовательские интерфейсы",
+    "primary_scene": "Assets/Scenes/Menu.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 15,
+    "file": "Hour15.zip",
+    "bytes": 599629,
+    "sha256": "e4a45a7d9ab16132839a213fefb2bd0c8141bb0ba4791a828fc8f3eb207614b9",
+    "title": "Игра третья: Капитан Бластер",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 16,
+    "file": "Hour16.zip",
+    "bytes": 1165766,
+    "sha256": "84ed06ba4c2d26b8c4c1c15a9f588f28bb767c28f7a88c8f7d9733f7106c2952",
+    "title": "Системы частиц",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 17,
+    "file": "Hour17.zip",
+    "bytes": 997302,
+    "sha256": "bda69a0799cd4bf55599f1d32d5cadcd3e20cb1f809901261008c81f3658a611",
+    "title": "Анимация",
+    "primary_scene": "Assets/Scenes/Exercise.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": true
+  },
+  {
+    "hour": 18,
+    "file": "Hour18.zip",
+    "bytes": 29655990,
+    "sha256": "f3f6b38a6e48d9bfa6d576f8ddaa1b071cf66a66c673b87558f2340d87d54359",
+    "title": "Аниматоры и гуманоидный mapping",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 19,
+    "file": "Hour19.zip",
+    "bytes": 109218,
+    "sha256": "55cf438ae05b185172c9525edc4f8c23ccf1ede0327f6f9b699c0b8e15d1e54a",
+    "title": "Timeline",
+    "primary_scene": "Assets/Scenes/Exercise.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": true
+  },
+  {
+    "hour": 20,
+    "file": "Hour20.zip",
+    "bytes": 14825916,
+    "sha256": "42e1199ffa90bb61ab0e83f6125155cd16f3827e6383242c838c065fe6cecef1",
+    "title": "Игра четвёртая: Бег с препятствиями",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 21,
+    "file": "Hour21.zip",
+    "bytes": 1896421,
+    "sha256": "6e2d10f03d4c470ce622d7447ed8c391fe9472f8f5e143147d19c52d22f4de7b",
+    "title": "Работа со звуком",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 22,
+    "file": "Hour22.zip",
+    "bytes": 72981,
+    "sha256": "8aa2b68ec8a1f277c9e3d191c154540c02826caf46e88dc7b0e11015d6bdff8d",
+    "title": "Разработка для мобильных устройств",
+    "primary_scene": "Assets/Scenes/04_Exercise_BookInput.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 23,
+    "file": "Hour23.zip",
+    "bytes": 58521,
+    "sha256": "59a5517a2090ac81b96f8f592f984490af81c0e09142b1a35590655dbb103d3f",
+    "title": "Доработка и развертка",
+    "primary_scene": "Assets/Scenes/Scene1.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  },
+  {
+    "hour": 24,
+    "file": "Hour24.zip",
+    "bytes": 7446950,
+    "sha256": "8fffb18410d414821d84510cfa98e916febc53dd0005a56374e548a666752c2e",
+    "title": "Подведение итогов",
+    "primary_scene": "Assets/Scenes/Main.unity",
+    "engine_checks": "UNRUN",
+    "editor_preparation_pending": false
+  }
+]

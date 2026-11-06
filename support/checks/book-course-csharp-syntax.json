@@ -1,0 +1,14 @@
+[
+  {
+    "profile": "Windows Editor",
+    "files_parsed": 590,
+    "syntax_errors": [],
+    "unity_api_compilation": "UNRUN"
+  },
+  {
+    "profile": "Windows Mono Player",
+    "files_parsed": 488,
+    "syntax_errors": [],
+    "unity_api_compilation": "UNRUN"
+  }
+]
